@@ -11,7 +11,7 @@ Componenta echipa:
 - docs/ Toata documentatia
 - src/ Codul sursa al aplicatie
   - src/api - Codul sursa pentru API-ul aplicatiei
-  - src/static - Elementele statice folosite in aplicatie (CSS, JS, Images, etc...)
+  - src/static + src/assets - Elementele statice folosite in aplicatie (CSS, JS, Images, etc...)
   - src/views - TBD: pentru componenta I pot fi paginile aplicatiei
 
 ## Instalare
