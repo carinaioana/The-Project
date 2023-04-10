@@ -1,0 +1,74 @@
+<html>
+
+<head>
+  <title>Unemployment Stats</title>
+  <link rel="stylesheet" href="../api/style.css">
+</head>
+
+<body>
+<div class="navbar">
+  <div class="title">
+    <h1>Unemployment Stats</h1>
+  </div>
+  <div class="navbar-selector">
+    <button class="navbar-selector-button">
+      <a class="navbar-selector-button-a" href="chart1.html">Map</a>
+    </button>
+    <button class="navbar-selector-button">
+      <a class="navbar-selector-button-a" href="chart2.html">Bar Chart</a>
+    </button>
+    <button class="navbar-selector-button">
+      <a class="navbar-selector-button-a" href="pie-chart.html">Pie Chart</a>
+    </button>
+    <button class="navbar-selector-button">
+      <a class="navbar-selector-button-a" href="home.html">Home</a>
+    </button>
+    <button class="navbar-selector-button">
+      <a class="navbar-selector-button-a" href="login.html">Login</a>
+    </button>
+    <button class="navbar-selector-button">
+      <a class="navbar-selector-button-a" href="about-us.html">About us</a>
+    </button>
+    <div class="language-switcher">
+      <button id="english-btn" class="active">English</button>
+      <button id="romanian-btn">Romana</button>
+    </div>
+
+  </div>
+
+</div>
+
+<section>
+  <div class="content">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Nr of females',     11],
+        ['Paid',      2],
+        ['Sick',  2],
+        ['Age 18-25', 2],
+      ]);
+
+      var options = {
+        title: 'Unemployment Stats'
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+    <div id="piechart" style="width: 900px; height: 500px; "></div>
+  </div>
+</section>
+</body>
+<footer>
+  <p>&copy; 2023 My Company</p>
+</footer>
+</html>

@@ -1,0 +1,412 @@
+[ 
+  {
+    "county": "Alba",
+    "rate-of-unemployment": "8",
+    "total-nr-of-unemployed": 8100,
+    "nr-of-females": 4400,
+    "nr-of-males": 3700,
+    "paid": 2500,
+    "not-paid": 5600,
+    "id": "ROU294"
+  },
+  {
+    "county": "Arad",
+    "rate-of-unemployment": "10",
+    "total-nr-of-unemployed": 13100,
+    "nr-of-females": 6800,
+    "nr-of-males": 6300,
+    "paid": 4400,
+    "not-paid": 8700,
+    "id": "ROU276"
+  },
+  {
+    "county": "Arges",
+    "rate-of-unemployment": "6",
+    "total-nr-of-unemployed": 12600,
+    "nr-of-females": 6400,
+    "nr-of-males": 6200,
+    "paid": 3800,
+    "not-paid": 8800,
+    "id": "ROU301"
+  },
+  {
+    "county": "Bacau",
+    "rate-of-unemployment": "7",
+    "total-nr-of-unemployed": 15800,
+    "nr-of-females": 8200,
+    "nr-of-males": 7600,
+    "paid": 5600,
+    "not-paid": 10200,
+    "id": "ROU312"
+  },
+  {
+    "county": "Bihor",
+    "rate-of-unemployment": "9",
+    "total-nr-of-unemployed": 15400,
+    "nr-of-females": 8000,
+    "nr-of-males": 7400,
+    "paid": 5000,
+    "not-paid": 10400,
+    "id": "ROU277"
+  },
+  {
+    "county": "Bistrita-Nasaud",
+    "rate-of-unemployment": "6",
+    "total-nr-of-unemployed": 3900,
+    "nr-of-females": 1900,
+    "nr-of-males": 2000,
+    "paid": 1400,
+    "not-paid": 2500,
+    "id": "ROU295"
+  },
+  {
+    "county": "Botosani",
+    "rate-of-unemployment": "8",
+    "total-nr-of-unemployed": 8700,
+    "nr-of-females": 4700,
+    "nr-of-males": 4000,
+    "paid": 2800,
+    "not-paid": 5900,
+    "id": "ROU287"
+  },
+  {
+    "county": "Brasov",
+    "rate-of-unemployment": "6",
+    "total-nr-of-unemployed": 18800,
+    "nr-of-females": 10000,
+    "nr-of-males": 8800,
+    "paid": 5700,
+    "not-paid": 13100,
+    "id": "ROU305"
+  },
+  {
+    "county": "Braila",
+    "rate-of-unemployment": "9",
+    "total-nr-of-unemployed": 9600,
+    "nr-of-females": 5100,
+    "nr-of-males": 4500,
+    "paid": 3100,
+    "not-paid": 6500,
+    "id": "ROU313"
+  },
+  {
+    "county": "Buzau",
+    "rate-of-unemployment": "8",
+    "total-nr-of-unemployed": 11800,
+    "nr-of-females": 6100,
+    "nr-of-males": 5700,
+    "paid": 4300,
+    "not-paid": 7500,
+    "id": "ROU314"
+  },
+  {
+    "county": "Caras-Severin",
+    "rate-of-unemployment": "10",
+    "total-nr-of-unemployed": 10600,
+    "nr-of-females": 5300,
+    "nr-of-males": 5300,
+    "paid": 3500,
+    "not-paid": 7100,
+    "id": "ROU278"
+  },
+  {
+    "county": "Calarasi",
+    "rate-of-unemployment": "7",
+    "total-nr-of-unemployed": 3600,
+    "nr-of-females": 2000,
+    "nr-of-males": 1600,
+    "paid": 1300,
+    "not-paid": 2300,
+    "id": "ROU129"
+  },
+  {
+    "county": "Cluj",
+    "rate-of-unemployment": "5",
+    "total-nr-of-unemployed": 16200,
+    "nr-of-females": 8500,
+    "nr-of-males": 7700,
+    "paid": 5200,
+    "not-paid": 11000,
+    "id": "ROU296"
+  },
+  {
+    "county": "Constanta",
+    "rate-of-unemployment": "7",
+    "total-nr-of-unemployed": 20200,
+    "nr-of-females": 10800,
+    "nr-of-males": 9400,
+    "paid": 6400,
+    "not-paid": 13800,
+    "id": "ROU133"
+  },
+  {
+    "county": "Covasna",
+    "rate-of-unemployment": "6",
+    "total-nr-of-unemployed": 4000,
+    "nr-of-females": 2100,
+    "nr-of-males": 1900,
+    "paid": 1200,
+    "not-paid": 2800,
+    "id": "ROU306"
+  },
+  {
+    "county": "Dambovita",
+    "rate-of-unemployment": "8",
+    "total-nr-of-unemployed": 12900,
+    "nr-of-females": 6800,
+    "nr-of-males": 6100,
+    "paid": 4500,
+    "not-paid": 8400,
+    "id": "ROU130"
+  },
+  {
+    "county": "Dolj",
+    "rate-of-unemployment": "9",
+    "total-nr-of-unemployed": 16400,
+    "nr-of-females": 9000,
+    "nr-of-males": 7400,
+    "paid": 5200,
+    "not-paid": 11200,
+    "id": "ROU122"
+  },
+  {
+    "county": "Galati",
+    "rate-of-unemployment": "9",
+    "total-nr-of-unemployed": 16600,
+    "nr-of-females": 8700,
+    "nr-of-males": 7900,
+    "paid": 5700,
+    "not-paid": 10900,
+    "id": "ROU315"
+  },
+  {
+    "county": "Giurgiu",
+    "rate-of-unemployment": "7",
+    "total-nr-of-unemployed": 4700,
+    "nr-of-females": 2400,
+    "nr-of-males": 2300,
+    "paid": 1600,
+    "not-paid": 3100,
+    "id": "ROU131"
+  },
+  {
+    "county": "Gorj",
+    "rate-of-unemployment": "10",
+    "total-nr-of-unemployed": 12400,
+    "nr-of-females": 6500,
+    "nr-of-males": 5900,
+    "paid": 4300,
+    "not-paid": 8100,
+    "id": "ROU123"
+  },
+  {
+    "county": "Harghita",
+    "rate-of-unemployment": "3.7",
+    "total-nr-of-unemployed": 4699,
+    "nr-of-females": 2468,
+    "nr-of-males": 2231,
+    "paid": 2076,
+    "not-paid": 2623,
+    "id": "ROU307"
+  },
+  {
+    "county": "Hunedoara",
+    "rate-of-unemployment": "4.3",
+    "total-nr-of-unemployed": 9413,
+    "nr-of-females": 4914,
+    "nr-of-males": 4499,
+    "paid": 3995,
+    "not-paid": 5418,
+    "id": "ROU297"
+  },
+  {
+    "county": "Ialomita",
+    "rate-of-unemployment": "5.6",
+    "total-nr-of-unemployed": 8158,
+    "nr-of-females": 4479,
+    "nr-of-males": 3679,
+    "paid": 3450,
+    "not-paid": 4708,
+    "id": "ROU132"
+  },
+  {
+    "county": "Iasi",
+    "rate-of-unemployment": "4.2",
+    "total-nr-of-unemployed": 20859,
+    "nr-of-females": 11505,
+    "nr-of-males": 9344,
+    "paid": 7779,
+    "not-paid": 13080,
+    "id": "ROU308"
+  },
+  {
+    "county": "Ilfov",
+    "rate-of-unemployment": "2.7",
+    "total-nr-of-unemployed": 10371,
+    "nr-of-females": 5128,
+    "nr-of-males": 5243,
+    "paid": 7318,
+    "not-paid": 3053,
+    "id": "ROU4844"
+  },
+  {
+    "county": "Maramures",
+    "rate-of-unemployment": "4.4",
+    "total-nr-of-unemployed": 9316,
+    "nr-of-females": 4894,
+    "nr-of-males": 4422,
+    "paid": 3215,
+    "not-paid": 6101,
+    "id": "ROU298"
+  },
+  {
+    "county": "Mehedinti",
+    "rate-of-unemployment": "5.6",
+    "total-nr-of-unemployed": 7708,
+    "nr-of-females": 3893,
+    "nr-of-males": 3815,
+    "paid": 3144,
+    "not-paid": 4564,
+    "id": "ROU124"
+  },
+  {
+    "county": "Mures",
+    "rate-of-unemployment": "3.2",
+    "total-nr-of-unemployed": 10714,
+    "nr-of-females": 5486,
+    "nr-of-males": 5228,
+    "paid": 7566,
+    "not-paid": 3148,
+    "id": "ROU299"
+  },
+  {
+    "county": "Neamt",
+    "rate-of-unemployment": "3.7",
+    "total-nr-of-unemployed": 8413,
+    "nr-of-females": 4337,
+    "nr-of-males": 4076,
+    "paid": 3646,
+    "not-paid": 4767,
+    "id": "ROU309"
+  },
+  {
+    "county": "Olt",
+    "rate-of-unemployment": "4.6",
+    "total-nr-of-unemployed": 13932,
+    "nr-of-females": 7432,
+    "nr-of-males": 6500,
+    "paid": 4341,
+    "not-paid": 9591,
+    "id": "ROU126"
+  },
+  {
+    "county": "Prahova",
+    "rate-of-unemployment": "4.8",
+    "total-nr-of-unemployed": 32780,
+    "nr-of-females": 17666,
+    "nr-of-males": 15114,
+    "paid": 11843,
+    "not-paid": 20937,
+    "id": "ROU310"
+  },
+  {
+    "county": "Satu Mare",
+    "rate-of-unemployment": "3.9",
+    "total-nr-of-unemployed": 8431,
+    "nr-of-females": 4218,
+    "nr-of-males": 4213,
+    "paid": 3272,
+    "not-paid": 5159,
+    "id": "ROU301"
+  },
+  {
+    "county": "Salaj",
+    "rate-of-unemployment": "4.0",
+    "total-nr-of-unemployed": 6974,
+    "nr-of-females": 3528,
+    "nr-of-males": 3446,
+    "paid": 3045,
+    "not-paid": 3939,
+    "id": "ROU300"
+  },
+  {
+    "county": "Sibiu",
+    "rate-of-unemployment": "3.0",
+    "total-nr-of-unemployed": 9382,
+    "nr-of-females": 4683,
+    "nr-of-males": 4699,
+    "paid": 6689,
+    "not-paid": 2693,
+    "id": "ROU303"
+  },
+  {
+    "county": "Suceava",
+    "rate-of-unemployment": "4.6",
+    "total-nr-of-unemployed": 14007,
+    "nr-of-females": 7376,
+    "nr-of-males": 6631,
+    "paid": 4007,
+    "not-paid": 9995,
+    "id": "ROU311"
+  },
+  {
+    "county": "Teleorman",
+    "rate-of-unemployment": "5.7",
+    "total-nr-of-unemployed": 10271,
+    "nr-of-females": 5633,
+    "nr-of-males": 4638,
+    "paid": 4283,
+    "not-paid": 5988,
+    "id": "ROU127"
+  },
+  {
+    "county": "Timis",
+    "rate-of-unemployment": "2.7",
+    "total-nr-of-unemployed": 16907,
+    "nr-of-females": 8855,
+    "nr-of-males": 8052,
+    "paid": 12569,
+    "not-paid": 4338,
+    "id": "ROU280"
+  },
+  {
+    "county": "Tulcea",
+    "rate-of-unemployment": "3.9",
+    "total-nr-of-unemployed": 6327,
+    "nr-of-females": 3161,
+    "nr-of-males": 3166,
+    "paid": 2447,
+    "not-paid": 3880,
+    "id": "ROU4847"
+  },
+  {
+    "county": "Vaslui",
+    "rate-of-unemployment": "4.8",
+    "total-nr-of-unemployed": 13223,
+    "nr-of-females": 6897,
+    "nr-of-males": 6326,
+    "paid": 5459,
+    "not-paid": 7764,
+    "id": "ROU316"
+  },
+  {
+    "county": "Valcea",
+    "rate-of-unemployment": "4.9",
+    "total-nr-of-unemployed": 13784,
+    "nr-of-females": 7333,
+    "nr-of-males": 6451,
+    "paid": 4921,
+    "not-paid": 8863,
+    "id": "ROU304"
+  },
+  {
+    "county": "Bucharest (Bucuresti)",
+    "rate-of-unemployment": "2.8",
+    "total-nr-of-unemployed": 38039,
+    "nr-of-females": 19975,
+    "nr-of-males": 18064,
+    "paid": 28034,
+    "not-paid": 10005,
+    "id": "ROU128"
+  }
+]

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Unemployment Stats</title>
+    <link rel="stylesheet" href="../api/style.css">
+    <script type="text/javascript" src="../api/chart1.js"></script>
+</head>
+
+<body>
+<div class="navbar">
+    <div class="title">
+        <h1>Unemployment Stats</h1>
+    </div>
+    <div class="navbar-selector">
+        <button class="navbar-selector-button">
+            <a class="navbar-selector-button-a" href="chart1.html">Map</a>
+        </button>
+        <button class="navbar-selector-button">
+            <a class="navbar-selector-button-a" href="chart2.html">Bar Chart</a>
+        </button>
+        <button class="navbar-selector-button">
+            <a class="navbar-selector-button-a" href="pie-chart.html">Pie Chart</a>
+        </button>
+        <button class="navbar-selector-button">
+            <a class="navbar-selector-button-a" href="home.html">Home</a>
+        </button>
+        <button class="navbar-selector-button">
+            <a class="navbar-selector-button-a" href="login.html">Login</a>
+        </button>
+        <button class="navbar-selector-button">
+            <a class="navbar-selector-button-a" href="about-us.html">About us</a>
+        </button>
+        <div class="language-switcher">
+            <button id="english-btn" class="active">English</button>
+            <button id="romanian-btn">Romana</button>
+        </div>
+
+    </div>
+
+</div>
+<div class="content">
+        <div class="content-filter">
+            <!--create 6 buttons for selecting the filter-->
+            <button class="content-filter-button" id="rate-of-unemployment" onclick="filter('rate-of-unemployment')">Rate of Unemployment</button>
+            <button class="content-filter-button" id="total-nr-of-unemployed" onclick="filter('total-nr-of-unemployed')">Total Number of </button>
+            <button class="content-filter-button" id="nr-of-females" onclick="filter('nr-of-females')">Male</button>
+            <button class="content-filter-button" id="nr-of-males" onclick="filter('nr-of-males')">Paid</button>
+            <button class="content-filter-button" id="paid" onclick="filter('paid')">Not Paid</button>
+            <button class="content-filter-button" id="not-paid" onclick="filter('not-paid')">Unemployment Rate</button>
+        </div>
+        <div class="content-chart">
+            <object class="map"  id="myMap" data="../assets/ro.svg" type="image/svg+xml"></object>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>&copy; 2023 The project</p>
+</footer>
+</html>
