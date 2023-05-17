@@ -1,5 +1,4 @@
 <html>
-
 <head>
   <title>Unemployment Stats</title>
   <link rel="stylesheet" href="../api/style.css">
@@ -55,17 +54,18 @@
         ['Age 18-25', 2],
       ]);
 
-      var options = {
-        title: 'Unemployment Stats'
-      };
-
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-      chart.draw(data, options);
+      chart.draw(data);
     }
   </script>
-    <div id="piechart" style="width: 900px; height: 500px; "></div>
-  </div>
+    <div id="piechart" style="
+         width: 50rem;
+         height: 35rem;
+         position: absolute; /*This positions the <div> element absolutely within its containing parent.*/
+         top: 50%; left: 50%;
+         transform: translate(-50%, -50%); /* centers the <div> element both horizontally and vertically*/
+    "></div></div>
 </section>
 </body>
 <footer>
