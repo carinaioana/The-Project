@@ -1,5 +1,5 @@
 // Define the URL of the JSON file
-const url = "../static/all-data.json";
+const url = "../static/data.json";
 
 // Fetch the JSON data
 function fetchData(filterType) {

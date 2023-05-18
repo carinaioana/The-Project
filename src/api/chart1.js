@@ -4,7 +4,7 @@ function changeColor() {
     myPath.setAttribute("fill", "green");
 
 }// Define the URL of the JSON file
-const url = "../static/all-data.json";
+const url = "../static/data.json";
 function idToColor(id) {
     // Ensure id is in the range [1, 41]
     id = Math.max(1, Math.min(41, id));

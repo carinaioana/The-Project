@@ -1,0 +1,412 @@
+[ 
+  {
+    "county": "Alba",
+    "rate": "8",
+    "total": 8100,
+    "females": 4400,
+    "males": 3700,
+    "paid": 2500,
+    "not-paid": 5600,
+    "id": "ROU294"
+  },
+  {
+    "county": "Arad",
+    "rate": "10",
+    "total": 13100,
+    "females": 6800,
+    "males": 6300,
+    "paid": 4400,
+    "not-paid": 8700,
+    "id": "ROU276"
+  },
+  {
+    "county": "Arges",
+    "rate": "6",
+    "total": 12600,
+    "females": 6400,
+    "males": 6200,
+    "paid": 3800,
+    "not-paid": 8800,
+    "id": "ROU301"
+  },
+  {
+    "county": "Bacau",
+    "rate": "7",
+    "total": 15800,
+    "females": 8200,
+    "males": 7600,
+    "paid": 5600,
+    "not-paid": 10200,
+    "id": "ROU312"
+  },
+  {
+    "county": "Bihor",
+    "rate": "9",
+    "total": 15400,
+    "females": 8000,
+    "males": 7400,
+    "paid": 5000,
+    "not-paid": 10400,
+    "id": "ROU277"
+  },
+  {
+    "county": "Bistrita-Nasaud",
+    "rate": "6",
+    "total": 3900,
+    "females": 1900,
+    "males": 2000,
+    "paid": 1400,
+    "not-paid": 2500,
+    "id": "ROU295"
+  },
+  {
+    "county": "Botosani",
+    "rate": "8",
+    "total": 8700,
+    "females": 4700,
+    "males": 4000,
+    "paid": 2800,
+    "not-paid": 5900,
+    "id": "ROU287"
+  },
+  {
+    "county": "Brasov",
+    "rate": "6",
+    "total": 18800,
+    "females": 10000,
+    "males": 8800,
+    "paid": 5700,
+    "not-paid": 13100,
+    "id": "ROU305"
+  },
+  {
+    "county": "Braila",
+    "rate": "9",
+    "total": 9600,
+    "females": 5100,
+    "males": 4500,
+    "paid": 3100,
+    "not-paid": 6500,
+    "id": "ROU313"
+  },
+  {
+    "county": "Buzau",
+    "rate": "8",
+    "total": 11800,
+    "females": 6100,
+    "males": 5700,
+    "paid": 4300,
+    "not-paid": 7500,
+    "id": "ROU314"
+  },
+  {
+    "county": "Caras-Severin",
+    "rate": "10",
+    "total": 10600,
+    "females": 5300,
+    "males": 5300,
+    "paid": 3500,
+    "not-paid": 7100,
+    "id": "ROU278"
+  },
+  {
+    "county": "Calarasi",
+    "rate": "7",
+    "total": 3600,
+    "females": 2000,
+    "males": 1600,
+    "paid": 1300,
+    "not-paid": 2300,
+    "id": "ROU129"
+  },
+  {
+    "county": "Cluj",
+    "rate": "5",
+    "total": 16200,
+    "females": 8500,
+    "males": 7700,
+    "paid": 5200,
+    "not-paid": 11000,
+    "id": "ROU296"
+  },
+  {
+    "county": "Constanta",
+    "rate": "7",
+    "total": 20200,
+    "females": 10800,
+    "males": 9400,
+    "paid": 6400,
+    "not-paid": 13800,
+    "id": "ROU133"
+  },
+  {
+    "county": "Covasna",
+    "rate": "6",
+    "total": 4000,
+    "females": 2100,
+    "males": 1900,
+    "paid": 1200,
+    "not-paid": 2800,
+    "id": "ROU306"
+  },
+  {
+    "county": "Dambovita",
+    "rate": "8",
+    "total": 12900,
+    "females": 6800,
+    "males": 6100,
+    "paid": 4500,
+    "not-paid": 8400,
+    "id": "ROU130"
+  },
+  {
+    "county": "Dolj",
+    "rate": "9",
+    "total": 16400,
+    "females": 9000,
+    "males": 7400,
+    "paid": 5200,
+    "not-paid": 11200,
+    "id": "ROU122"
+  },
+  {
+    "county": "Galati",
+    "rate": "9",
+    "total": 16600,
+    "females": 8700,
+    "males": 7900,
+    "paid": 5700,
+    "not-paid": 10900,
+    "id": "ROU315"
+  },
+  {
+    "county": "Giurgiu",
+    "rate": "7",
+    "total": 4700,
+    "females": 2400,
+    "males": 2300,
+    "paid": 1600,
+    "not-paid": 3100,
+    "id": "ROU131"
+  },
+  {
+    "county": "Gorj",
+    "rate": "10",
+    "total": 12400,
+    "females": 6500,
+    "males": 5900,
+    "paid": 4300,
+    "not-paid": 8100,
+    "id": "ROU123"
+  },
+  {
+    "county": "Harghita",
+    "rate": "3.7",
+    "total": 4699,
+    "females": 2468,
+    "males": 2231,
+    "paid": 2076,
+    "not-paid": 2623,
+    "id": "ROU307"
+  },
+  {
+    "county": "Hunedoara",
+    "rate": "4.3",
+    "total": 9413,
+    "females": 4914,
+    "males": 4499,
+    "paid": 3995,
+    "not-paid": 5418,
+    "id": "ROU297"
+  },
+  {
+    "county": "Ialomita",
+    "rate": "5.6",
+    "total": 8158,
+    "females": 4479,
+    "males": 3679,
+    "paid": 3450,
+    "not-paid": 4708,
+    "id": "ROU132"
+  },
+  {
+    "county": "Iasi",
+    "rate": "4.2",
+    "total": 20859,
+    "females": 11505,
+    "males": 9344,
+    "paid": 7779,
+    "not-paid": 13080,
+    "id": "ROU308"
+  },
+  {
+    "county": "Ilfov",
+    "rate": "2.7",
+    "total": 10371,
+    "females": 5128,
+    "males": 5243,
+    "paid": 7318,
+    "not-paid": 3053,
+    "id": "ROU4844"
+  },
+  {
+    "county": "Maramures",
+    "rate": "4.4",
+    "total": 9316,
+    "females": 4894,
+    "males": 4422,
+    "paid": 3215,
+    "not-paid": 6101,
+    "id": "ROU298"
+  },
+  {
+    "county": "Mehedinti",
+    "rate": "5.6",
+    "total": 7708,
+    "females": 3893,
+    "males": 3815,
+    "paid": 3144,
+    "not-paid": 4564,
+    "id": "ROU124"
+  },
+  {
+    "county": "Mures",
+    "rate": "3.2",
+    "total": 10714,
+    "females": 5486,
+    "males": 5228,
+    "paid": 7566,
+    "not-paid": 3148,
+    "id": "ROU299"
+  },
+  {
+    "county": "Neamt",
+    "rate": "3.7",
+    "total": 8413,
+    "females": 4337,
+    "males": 4076,
+    "paid": 3646,
+    "not-paid": 4767,
+    "id": "ROU309"
+  },
+  {
+    "county": "Olt",
+    "rate": "4.6",
+    "total": 13932,
+    "females": 7432,
+    "males": 6500,
+    "paid": 4341,
+    "not-paid": 9591,
+    "id": "ROU126"
+  },
+  {
+    "county": "Prahova",
+    "rate": "4.8",
+    "total": 32780,
+    "females": 17666,
+    "males": 15114,
+    "paid": 11843,
+    "not-paid": 20937,
+    "id": "ROU310"
+  },
+  {
+    "county": "Satu Mare",
+    "rate": "3.9",
+    "total": 8431,
+    "females": 4218,
+    "males": 4213,
+    "paid": 3272,
+    "not-paid": 5159,
+    "id": "ROU301"
+  },
+  {
+    "county": "Salaj",
+    "rate": "4.0",
+    "total": 6974,
+    "females": 3528,
+    "males": 3446,
+    "paid": 3045,
+    "not-paid": 3939,
+    "id": "ROU300"
+  },
+  {
+    "county": "Sibiu",
+    "rate": "3.0",
+    "total": 9382,
+    "females": 4683,
+    "males": 4699,
+    "paid": 6689,
+    "not-paid": 2693,
+    "id": "ROU303"
+  },
+  {
+    "county": "Suceava",
+    "rate": "4.6",
+    "total": 14007,
+    "females": 7376,
+    "males": 6631,
+    "paid": 4007,
+    "not-paid": 9995,
+    "id": "ROU311"
+  },
+  {
+    "county": "Teleorman",
+    "rate": "5.7",
+    "total": 10271,
+    "females": 5633,
+    "males": 4638,
+    "paid": 4283,
+    "not-paid": 5988,
+    "id": "ROU127"
+  },
+  {
+    "county": "Timis",
+    "rate": "2.7",
+    "total": 16907,
+    "females": 8855,
+    "males": 8052,
+    "paid": 12569,
+    "not-paid": 4338,
+    "id": "ROU280"
+  },
+  {
+    "county": "Tulcea",
+    "rate": "3.9",
+    "total": 6327,
+    "females": 3161,
+    "males": 3166,
+    "paid": 2447,
+    "not-paid": 3880,
+    "id": "ROU4847"
+  },
+  {
+    "county": "Vaslui",
+    "rate": "4.8",
+    "total": 13223,
+    "females": 6897,
+    "males": 6326,
+    "paid": 5459,
+    "not-paid": 7764,
+    "id": "ROU316"
+  },
+  {
+    "county": "Valcea",
+    "rate": "4.9",
+    "total": 13784,
+    "females": 7333,
+    "males": 6451,
+    "paid": 4921,
+    "not-paid": 8863,
+    "id": "ROU304"
+  },
+  {
+    "county": "Bucharest (Bucuresti)",
+    "rate": "2.8",
+    "total": 38039,
+    "females": 19975,
+    "males": 18064,
+    "paid": 28034,
+    "not-paid": 10005,
+    "id": "ROU128"
+  }
+]
