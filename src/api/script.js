@@ -39,3 +39,23 @@ async function loadData() {
 }
 
 loadData();
+
+/*
+create table if not exists data
+(
+    county  varchar,
+    rate    varchar,
+    total   integer,
+    females integer,
+    males   integer,
+    paid    integer,
+    notpaid integer,
+    id      varchar not null
+constraint data_pk
+primary key
+);
+
+alter table data
+owner to postgres;
+
+*/
