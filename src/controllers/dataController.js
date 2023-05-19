@@ -1,6 +1,15 @@
 const Data = require('../models/dataModel')
-
+const { Pool } = require('pg');
 const {getPostData} = require('../api/utils')
+
+const pool = new Pool({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'postgres',
+    password: 'password',
+    port: 5432, // default PostgresSQL port
+});
+
 /**
  * @desc Gets All Data
  * @route GET /api/data
@@ -40,21 +49,29 @@ async function getOneData(req, res, id) {
  * @desc Create One Data
  * @route POST /api/data
  */
-/*async function createData(req,res) {
+async function createData(req,res) {
     try {
-        const data = {
-            "county": "Alba",
-            "rate": "8",
-            "total": 8100,
-            "females": 4400,
-            "males": 3700,
-            "paid": 2500,
-            "not-paid": 5600,
-        }
+            const body = await getPostData(req)
+
+            const {  county, rate, total, females, males, paid, notpaid} = JSON.parse(body)
+
+            const data = {
+                county,
+                rate,
+                total,
+                females,
+                males,
+                paid,
+                notpaid
+            }
+            const newData = await Data.create(data)
+
+            res.writeHead(200, {'Content-Type': 'application/json'})
+            return res.end(JSON.stringify(newData))
     } catch (error){
         console.log(error)
     }
-}*/
+}
 /**
  * @desc Update One Data
  * @route PUT /api/data/:id
@@ -90,8 +107,30 @@ async function updateData(req, res, id) {
         console.log(error)
     }
 }
+/**
+ * @desc Deletes Single Data
+ * @route DELETE /api/data/:id
+ */
+async function deleteData(req, res, id) {
+    try {
+        const oneData = await Data.findById(id)
+
+        if(!oneData){
+            res.writeHead(404, {'Content-Type': 'application/json'})
+            res.end(JSON.stringify({message:'Data Not Found'}))
+        } else {
+            await Data.remove(id)
+            res.writeHead(200, {'Content-Type': 'application/json'})
+            res.end(JSON.stringify({message: `Data ${id} removed`}))
+        }
+    } catch (error){
+        console.log(error)
+    }
+}
 module.exports = {
     getAllData,
     getOneData,
-    updateData
+    createData,
+    updateData,
+    deleteData
 }
