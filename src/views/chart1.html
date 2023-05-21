@@ -1,65 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Unemployment Stats</title>
-    <link rel="stylesheet" href="../api/style.css">
-    <script type="text/javascript" src="../api/chart1.js"></script>
+    <link href="../assets/styles.css" rel="stylesheet">
 </head>
 
 <body>
-<div class="navbar">
-    <div class="title">
-        <h1>Unemployment Stats</h1>
-    </div>
-    <div class="navbar-selector">
-        <button class="navbar-selector-button">
-            <a class="navbar-selector-button-a" href="chart1.html">Map</a>
-        </button>
-        <button class="navbar-selector-button">
-            <a class="navbar-selector-button-a" href="chart2.html">Bar Chart</a>
-        </button>
-        <button class="navbar-selector-button">
-            <a class="navbar-selector-button-a" href="pie-chart.html">Pie Chart</a>
-        </button>
-        <button class="navbar-selector-button">
-            <a class="navbar-selector-button-a" href="index.html">Home</a>
-        </button>
-        <button class="navbar-selector-button">
-            <a class="navbar-selector-button-a" href="login.html">Login</a>
-        </button>
-        <button class="navbar-selector-button">
-            <a class="navbar-selector-button-a" href="about-us.html">About us</a>
-        </button>
-        <div class="language-switcher">
-            <button id="english-btn" class="active">English</button>
-            <button id="romanian-btn">Romana</button>
+<div class="container">
+    <div class="navbar">
+        <div class="title">
+            <h1>Unemployment Stats</h1>
         </div>
-
+        <div class="navbar-selector">
+            <button class="navbar-selector-button">
+                <a class="navbar-selector-button-a" href="chart1.html">Map</a>
+            </button>
+            <button class="navbar-selector-button">
+                <a class="navbar-selector-button-a" href="chart2.html">Bar Chart</a>
+            </button>
+            <button class="navbar-selector-button">
+                <a class="navbar-selector-button-a" href="pie-chart.html">Pie Chart</a>
+            </button>
+            <button class="navbar-selector-button">
+                <a class="navbar-selector-button-a" href="index.html">Home</a>
+            </button>
+            <button class="navbar-selector-button">
+                <a class="navbar-selector-button-a" href="login.html">Login</a>
+            </button>
+            <button class="navbar-selector-button">
+                <a class="navbar-selector-button-a" href="about-us.html">About us</a>
+            </button>
+            <div class="language-switcher">
+                <button class="active" id="english-btn">English</button>
+                <button id="romanian-btn">Romana</button>
+            </div>
+        </div>
     </div>
-
-</div>
-<div class="content">
+    <div class="content">
         <div class="content-filter">
             <!--create 6 buttons for selecting the filter-->
-            <button class="content-filter-button" id="rate-of-unemployment" onclick="filter('rate-of-unemployment')">Rate of Unemployment</button>
-            <button class="content-filter-button" id="total-nr-of-unemployed" onclick="filter('total-nr-of-unemployed')">Total Number of </button>
-            <button class="content-filter-button" id="nr-of-females" onclick="filter('nr-of-females')">Female</button>
-            <button class="content-filter-button" id="nr-of-males" onclick="filter('nr-of-males')">Male</button>
-            <button class="content-filter-button" id="paid" onclick="filter('paid')">Paid</button>
-            <button class="content-filter-button" id="not-paid" onclick="filter('not-paid')">Not Paid</button>
+            <div class="checkbox-dropdown">
+                <label>Choose the time frame</label>
+                <ul class="checkbox-dropdown-list">
+                    <li>
+                        <label>
+                            <input name="months" type="checkbox" value="Vejle"/>Last 3 months</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input name="months" type="checkbox" value="6-months"/>Last 6 months</label>
+                    </li>
+                    <li>
+                        <label>
+                            <input name="months" type="checkbox" value="12-months"/>Last 12 months</label>
+                    </li>
 
+                </ul>
+            </div>
+
+            <div class="checkbox-dropdown">
+                <label>Choose a county</label>
+                <input id="county-search" placeholder="Search..." type="text">
+                <ul class="checkbox-dropdown-list" id="county-list">
+                </ul>
+            </div>
+
+            <div class="filtering-element">
+                <label class="filtering-element-label">More filters:</label>
+                <div class="filtering-element-options">
+                    <label class="filtering-element-option">
+                        <input name="gender" type="checkbox" value="total">
+                        Total
+                    </label>
+                    <label class="filtering-element-option">
+                        <input name="gender" type="checkbox" value="male">
+                        Male
+                    </label>
+                    <label class="filtering-element-option">
+                        <input name="gender" type="checkbox" value="female">
+                        Female
+                    </label>
+                    <label class="filtering-element-option">
+                        <input name="gender" type="checkbox" value="rate">
+                        Rate
+                    </label>
+                </div>
+            </div>
         </div>
-        <div class="content-chart">
-            <object class="map" id="myMap" data="../assets/ro.svg" type="image/svg+xml"></object>
-           <!-- <button class="content-filter-button " type="button" id="btnExportCSV"> Export CSV</button>-->
-        </div>
+
+        <canvas id="barChart"></canvas>
     </div>
 
-    <script src="../api/chart1.js"></script>
-
+    <footer>
+        <p>&copy; 2023 The project</p>
+    </footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../api/chart1.js"></script>
 </body>
-<footer>
-    <p>&copy; 2023 The project</p>
-</footer>
+
 </html>

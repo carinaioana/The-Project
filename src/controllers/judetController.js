@@ -1,4 +1,4 @@
-const Data = require('../models/educatieModel')
+const Data = require('../models/judetModel')
 const { Pool } = require('pg');
 const {getPostData} = require('../api/utils')
 
@@ -12,9 +12,9 @@ const pool = new Pool({
 
 /**
  * @desc Gets All Data
- * @route GET /api/education
+ * @route GET /api/data
  */
-async function getAllEdu(req, res) {
+async function getAllCounties(req, res) {
     try {
         const allData = await Data.findAll()
 
@@ -26,9 +26,9 @@ async function getAllEdu(req, res) {
 }
 /**
  * @desc Gets Single Data
- * @route GET /api/education/:id
+ * @route GET /api/data/:id
  */
-async function getOneEdu(req, res, id) {
+async function getOneCounty(req, res, id) {
     try {
         const oneData = await Data.findById(id)
 
@@ -47,24 +47,24 @@ async function getOneEdu(req, res, id) {
 
 /**
  * @desc Create One Data
- * @route POST /api/education
+ * @route POST /api/data
  */
-async function createEdu(req, res) {
+async function createCounty(req, res) {
     try {
         const body = await getPostData(req)
 
-        const { judet, total_someri, fara_studii, invatamant_primar, invatamant_gimnazial, invatamant_liceal, invatamant_posticeal, invatamant_profesional,invatamant_universitar,luna} = JSON.parse(body)
+        const { judet, total, total_femei, total_barbati, indemnizati, neindemnizati, rata_somajului, rata_feminina,rata_masculina,luna} = JSON.parse(body)
 
         const data = {
             judet,
-            total_someri,
-            fara_studii,
-            invatamant_primar,
-            invatamant_gimnazial,
-            invatamant_liceal,
-            invatamant_posticeal,
-            invatamant_profesional,
-            invatamant_universitar,
+            total,
+            total_femei,
+            total_barbati,
+            indemnizati,
+            neindemnizati,
+            rata_somajului,
+            rata_feminina,
+            rata_masculina,
             luna
         }
         const newData = await Data.create(data)
@@ -77,9 +77,9 @@ async function createEdu(req, res) {
 }
 /**
  * @desc Update One Data
- * @route PUT /api/education/:id
+ * @route PUT /api/data/:id
  */
-async function updateEdu(req, res, id) {
+async function updateCounty(req, res, id) {
     try {
         const data = await Data.findById(id)
 
@@ -91,28 +91,29 @@ async function updateEdu(req, res, id) {
             const body = await getPostData(req)
 
             const {
-                "Total someri": total_someri,
-                "fara studii": fara_studii,
-                "invatamant primar": invatamant_primar,
-                "invatamant gimnazial": invatamant_gimnazial,
-                "invatamant liceal": invatamant_liceal,
-                "invatamant posticeal": invatamant_posticeal,
-                "invatamant profesional/arte si meserii": invatamant_profesional,
-                "invatamant universitar": invatamant_universitar,
+                "Numar total someri": total,
+                "Numar total someri femei": total_femei,
+                "Numar total someri barbati": total_barbati,
+                "Numar someri indemnizati": indemnizati,
+                "Numar someri neindemnizati": neindemnizati,
+                "Rata somajului (%)": rata_somajului,
+                "Rata somajului Feminina (%)": rata_somajului_feminina,
+                "Rata somajului Masculina (%)": rata_somajului_masculina,
                 luna
             } = JSON.parse(body);
 
             const dataInfo = {
-                total_someri: total_someri || data["Total someri"],
-                fara_studii: fara_studii || data["fara studii"],
-                invatamant_primar: invatamant_primar || data["invatamant primar"],
-                invatamant_gimnazial: invatamant_gimnazial || data["invatamant gimnazial"],
-                invatamant_liceal: invatamant_liceal || data["invatamant liceal"],
-                invatamant_posticeal: invatamant_posticeal || data["invatamant posticeal"],
-                invatamant_profesional: invatamant_profesional || data["invatamant profesional/arte si meserii"],
-                invatamant_universitar: invatamant_universitar || data["invatamant universitar"],
+                total: total || data["Numar total someri"],
+                total_femei: total_femei || data["Numar total someri femei"],
+                total_barbati: total_barbati || data["Numar total someri barbati"],
+                indemnizati: indemnizati || data["Numar someri indemnizati"],
+                neindemnizati: neindemnizati || data["Numar someri neindemnizati"],
+                rata_somajului: rata_somajului || data["Rata somajului (%)"],
+                rata_somajului_feminina: rata_somajului_feminina || data["Rata somajului Feminina (%)"],
+                rata_somajului_masculina: rata_somajului_masculina || data["Rata somajului Masculina (%)"],
                 luna: luna || data.luna
             };
+
             const updData = await Data.update(id, dataInfo)
 
             res.writeHead(200, {'Content-Type': 'application/json'})
@@ -124,9 +125,9 @@ async function updateEdu(req, res, id) {
 }
 /**
  * @desc Deletes Single Data
- * @route DELETE /api/education/:id
+ * @route DELETE /api/data/:id
  */
-async function deleteEdu(req, res, id) {
+async function deleteCounty(req, res, id) {
     try {
         const oneData = await Data.findById(id)
 
@@ -144,9 +145,9 @@ async function deleteEdu(req, res, id) {
 }
 
 module.exports = {
-    getAllEdu,
-    getOneEdu,
-    createEdu,
-    updateEdu,
-    deleteEdu
+    getAllCounties,
+    getOneCounty,
+    createCounty,
+    updateCounty,
+    deleteCounty
 }

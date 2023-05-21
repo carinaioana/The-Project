@@ -1,5 +1,6 @@
 const http = require('http');
-const { getAllData, getOneData, createData, updateData, deleteData } = require('../controllers/educatieController')
+const { getAllEdu, getOneEdu, createEdu, updateEdu, deleteEdu } = require('../controllers/educatieController')
+const { getAllCounties, getOneCounty,  createCounty, updateCounty, deleteCounty } = require('../controllers/judetController')
 const { exportDataToCsv } = require('../controllers/exportCSVController')
 const { Pool } = require('pg');
 
@@ -15,24 +16,44 @@ const pool = new Pool({
 const server = http.createServer((req, res) => {
     //API educatie
     if(req.url === '/api/educatie' && req.method === 'GET'){
-        getAllData(req, res)
+
+        getAllEdu(req, res)
     } else if(req.url.match(/\/api\/data\/[A-Za-z\s]+/) && req.method === 'GET')
     {
         const id = req.url.split('/')[3]
-        getOneData(req, res, id)
+        getOneEdu(req, res, id)
     } else if(req.url === '/api/educatie' && req.method === 'POST')
     {
-        createData(req, res)
+        createEdu(req, res)
     }  else if(req.url.match(/\/api\/educatie\/[A-Za-z\s]+/) && req.method === 'PUT')
     {
         const id = req.url.split('/')[3]
-        updateData(req, res, id)
+        updateEdu(req, res, id)
     } else if(req.url.match(/\/api\/educatie\/[A-Za-z\s]+/) && req.method === 'DELETE')
     {
         const id = req.url.split('/')[3]
-        deleteData(req, res, id)
+        deleteEdu(req, res, id)
     }
-    //API mediu
+    //API judet
+    else if(req.url === '/api/judet' && req.method === 'GET'){
+
+        getAllCounties(req, res)
+    } else if(req.url.match(/\/api\/judet\/[A-Za-z\s]+/) && req.method === 'GET')
+    {
+        const id = req.url.split('/')[3]
+        getOneCounty(req, res, id)
+    } else if(req.url === '/api/judet' && req.method === 'POST')
+    {
+        createCounty(req, res)
+    }  else if(req.url.match(/\/api\/judet\/[A-Za-z\s]+/) && req.method === 'PUT')
+    {
+        const id = req.url.split('/')[3]
+        updateCounty(req, res, id)
+    } else if(req.url.match(/\/api\/judet\/[A-Za-z\s]+/) && req.method === 'DELETE')
+    {
+        const id = req.url.split('/')[3]
+        deleteCounty(req, res, id)
+    }
     else {
         res.writeHead(404, {'Content-Type': 'application/json'})
         res.end(JSON.stringify({message:'Route Not Found'}))
