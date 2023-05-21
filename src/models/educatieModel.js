@@ -13,7 +13,7 @@ function findAll() {
     return new Promise(async (resolve, reject) => {
         try {
             const client = await pool.connect();
-            const result = await client.query('SELECT * FROM data');
+            const result = await client.query('SELECT * FROM educatie');
             client.release();
             resolve(result.rows);
         } catch (error) {
@@ -26,7 +26,7 @@ function findById(id) {
     return new Promise(async (resolve, reject) => {
         try {
             const client = await pool.connect();
-            const result = await client.query('SELECT * FROM data WHERE id = $1', [id]);
+            const result = await client.query('SELECT * FROM educatie WHERE judet = $1', [id]);
             client.release();
 
             if (result.rows.length === 0) {
@@ -42,14 +42,14 @@ function findById(id) {
 
 function create(data) {
     return new Promise(async (resolve, reject) => {
-        const { county, rate, total, females, males, paid, notpaid } = data;
+        const {judet,  total_someri, fara_studii, invatamant_primar, invatamant_gimnazial, invatamant_liceal, invatamant_posticeal, invatamant_profesional,invatamant_universitar,luna } = data;
 
         try {
             const client = await pool.connect();
             const result = await client.query(
-                'INSERT INTO data (county, rate, total, females, males, paid, notpaid, id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *',
-                [county, rate, total, females, males, paid, notpaid, uuidv4()]
-            );
+                'INSERT INTO educatie (judet, "Total someri", "fara studii", "invatamant primar", "invatamant gimnazial", "invatamant liceal", "invatamant posticeal", "invatamant profesional/arte si meserii","invatamant universitar",luna) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9,$10) RETURNING *',
+                [judet, total_someri, fara_studii, invatamant_primar, invatamant_gimnazial, invatamant_liceal, invatamant_posticeal,invatamant_profesional, invatamant_universitar, luna]
+            )
             client.release();
             resolve(result.rows[0]);
         } catch (error) {
@@ -60,16 +60,25 @@ function create(data) {
 
 function update(id, data) {
     return new Promise(async (resolve, reject) => {
-        const { county, rate, total, females, males, paid, notpaid } = data;
-
+        const {total_someri, fara_studii, invatamant_primar, invatamant_gimnazial, invatamant_liceal, invatamant_posticeal, invatamant_profesional,invatamant_universitar,luna } = data;
         try {
             const client = await pool.connect();
             const result = await client.query(
-                'UPDATE data SET county=$1, rate=$2, total=$3, females=$4, males=$5, paid=$6, notpaid=$7 WHERE id=$8 RETURNING *',
-                [county, rate, total, females, males, paid, notpaid, id]
+                `UPDATE educatie SET
+                                     "Total someri" = $1,
+                                     "fara studii" = $2,
+                                     "invatamant primar" = $3,
+                                     "invatamant gimnazial" = $4,
+                                     "invatamant liceal" = $5,
+                                     "invatamant posticeal" = $6,
+                                     "invatamant profesional/arte si meserii" = $7,
+                                     "invatamant universitar" = $8,
+                                     luna = $9
+                 WHERE judet = $10
+                 RETURNING *`,
+                [total_someri, fara_studii, invatamant_primar, invatamant_gimnazial, invatamant_liceal, invatamant_posticeal, invatamant_profesional, invatamant_universitar, luna, id]
             );
             client.release();
-
             if (result.rows.length === 0) {
                 resolve(null);
             } else {
@@ -85,7 +94,7 @@ function remove(id) {
     return new Promise(async (resolve, reject) => {
         try {
             const client = await pool.connect();
-            await client.query('DELETE FROM data WHERE id=$1', [id]);
+            await client.query('DELETE FROM educatie WHERE judet=$1', [id]);
             client.release();
             resolve();
         } catch (error) {

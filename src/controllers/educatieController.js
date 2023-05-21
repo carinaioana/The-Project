@@ -1,4 +1,4 @@
-const Data = require('../models/dataModel')
+const Data = require('../models/educatieModel')
 const { Pool } = require('pg');
 const {getPostData} = require('../api/utils')
 
@@ -13,7 +13,7 @@ const pool = new Pool({
 /**
  * @desc Gets All Data
  * @route GET /api/data
-*/
+ */
 async function getAllData(req,res) {
     try {
         const allData = await Data.findAll()
@@ -51,23 +51,26 @@ async function getOneData(req, res, id) {
  */
 async function createData(req,res) {
     try {
-            const body = await getPostData(req)
+        const body = await getPostData(req)
 
-            const {  county, rate, total, females, males, paid, notpaid} = JSON.parse(body)
+        const { judet, total_someri, fara_studii, invatamant_primar, invatamant_gimnazial, invatamant_liceal, invatamant_posticeal, invatamant_profesional,invatamant_universitar,luna} = JSON.parse(body)
 
-            const data = {
-                county,
-                rate,
-                total,
-                females,
-                males,
-                paid,
-                notpaid
-            }
-            const newData = await Data.create(data)
+        const data = {
+            judet,
+            total_someri,
+            fara_studii,
+            invatamant_primar,
+            invatamant_gimnazial,
+            invatamant_liceal,
+            invatamant_posticeal,
+            invatamant_profesional,
+            invatamant_universitar,
+            luna
+        }
+        const newData = await Data.create(data)
 
-            res.writeHead(200, {'Content-Type': 'application/json'})
-            return res.end(JSON.stringify(newData))
+        res.writeHead(200, {'Content-Type': 'application/json'})
+        return res.end(JSON.stringify(newData))
     } catch (error){
         console.log(error)
     }
@@ -87,17 +90,29 @@ async function updateData(req, res, id) {
             console.log(req)
             const body = await getPostData(req)
 
-            const {  county, rate, total, females, males, paid, notpaid} = JSON.parse(body)
+            const {
+                "Total someri": total_someri,
+                "fara studii": fara_studii,
+                "invatamant primar": invatamant_primar,
+                "invatamant gimnazial": invatamant_gimnazial,
+                "invatamant liceal": invatamant_liceal,
+                "invatamant posticeal": invatamant_posticeal,
+                "invatamant profesional/arte si meserii": invatamant_profesional,
+                "invatamant universitar": invatamant_universitar,
+                luna
+            } = JSON.parse(body);
 
             const dataInfo = {
-                county: county || data.county ,
-                rate: rate || data.rate,
-                total: total || data.total,
-                females: females || data.females,
-                males: males || data.males,
-                paid: paid || data.paid,
-                notpaid: notpaid || data.notpaid
-            }
+                total_someri: total_someri || data["Total someri"],
+                fara_studii: fara_studii || data["fara studii"],
+                invatamant_liceal: invatamant_primar || data["invatamant primar"],
+                invatamant_gimnazial: invatamant_gimnazial || data["invatamant gimnazial"],
+                invatamant_liceal: invatamant_liceal || data["invatamant liceal"],
+                invatamant_posticeal: invatamant_posticeal || data["invatamant posticeal"],
+                invatamant_profesional: invatamant_profesional || data["invatamant profesional/arte si meserii"],
+                invatamant_universitar: invatamant_universitar || data["invatamant universitar"],
+                luna: luna || data.luna
+            };
             const updData = await Data.update(id, dataInfo)
 
             res.writeHead(200, {'Content-Type': 'application/json'})
@@ -127,6 +142,7 @@ async function deleteData(req, res, id) {
         console.log(error)
     }
 }
+
 module.exports = {
     getAllData,
     getOneData,

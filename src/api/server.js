@@ -1,5 +1,6 @@
 const http = require('http');
-const { getAllData, getOneData, createData, updateData, deleteData } = require('../controllers/dataController')
+const { getAllData, getOneData, createData, updateData, deleteData } = require('../controllers/educatieController')
+const { exportDataToCsv } = require('../controllers/exportCSVController')
 const { Pool } = require('pg');
 
 const pool = new Pool({
@@ -9,38 +10,29 @@ const pool = new Pool({
     password: 'password',
     port: 5432, // default PostgresSQL port
 });
-// Function to query the database
-const query = async (text, params) => {
-    try {
-        const client = await pool.connect();
-        const result = await client.query(text, params);
-        client.release();
-        return result;
-    } catch (err) {
-        console.error('Error executing query', err);
-        throw err;
-    }
-};
+
 
 const server = http.createServer((req, res) => {
-    if(req.url === '/api/data' && req.method === 'GET'){
+    //API educatie
+    if(req.url === '/api/educatie' && req.method === 'GET'){
         getAllData(req, res)
-    } else if(req.url.match(/\/api\/data\/ROU\d{3}$/) && req.method === 'GET')
+    } else if(req.url.match(/\/api\/data\/[A-Za-z\s]+/) && req.method === 'GET')
     {
         const id = req.url.split('/')[3]
         getOneData(req, res, id)
-    } else if(req.url === '/api/data' && req.method === 'POST')
+    } else if(req.url === '/api/educatie' && req.method === 'POST')
     {
         createData(req, res)
-    }  else if(req.url.match(/\/api\/data\/ROU\d{3}$/) && req.method === 'PUT')
+    }  else if(req.url.match(/\/api\/educatie\/[A-Za-z\s]+/) && req.method === 'PUT')
     {
         const id = req.url.split('/')[3]
         updateData(req, res, id)
-    } else if(req.url.match(/\/api\/data\/ROU\d{3}$/) && req.method === 'DELETE')
+    } else if(req.url.match(/\/api\/educatie\/[A-Za-z\s]+/) && req.method === 'DELETE')
     {
         const id = req.url.split('/')[3]
         deleteData(req, res, id)
     }
+    //API mediu
     else {
         res.writeHead(404, {'Content-Type': 'application/json'})
         res.end(JSON.stringify({message:'Route Not Found'}))
