@@ -309,7 +309,7 @@ p {
     font-size: 16px;
 }
 
-/* Display CSS arrow to the right of the dropdown text */
+/* Display CSS arrow to the right of the dropdown text.txt */
 .checkbox-dropdown:after {
     content: '';
     height: 0;
@@ -335,7 +335,7 @@ p {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 100%; /* align the dropdown right below the dropdown text */
+    top: 100%; /* align the dropdown right below the dropdown text.txt */
     border: inherit;
     border-top: none;
     left: -1px; /* align the dropdown to the left */

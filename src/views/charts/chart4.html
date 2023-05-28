@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Unemployment Stats</title>
+    <link href="../../public/styles/styles.css" rel="stylesheet">
+    <link href="../../public/styles/contentStyles.css" rel="stylesheet">
+    <script src="../../public/pieChart.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="navbar">
+    <div class="title">
+        <a class="navbar-selector-button" href="/"><h1>Unemployment Stats</h1></a>
+    </div>
+    <div class="navbar-selector">
+        <a class="navbar-selector-button" href="/map">Map</a>
+        <a class="navbar-selector-button" href="/bar-chart">Bar Chart</a>
+        <a class="navbar-selector-button" href="/pie-chart">Pie Chart</a>
+
+        <a class="navbar-selector-button" href="/login" id="login-link">Login</a>
+        <a class="navbar-selector-button" href="/about-us">About us</a>
+    </div>
+</div>
+<div class="content">
+    <div class="content-filter">
+        <!--create 6 buttons for selecting the filter-->
+        <div class="checkbox-dropdown">
+            <label>Choose the time frame</label>
+            <ul class="checkbox-dropdown-list">
+                <li>
+                    <label>
+                        <input id="3" name="months" type="checkbox" value="3-months"/>Last 3 months</label>
+                </li>
+                <li>
+                    <label>
+                        <input id="6" name="months" type="checkbox" value="6-months"/>Last 6 months</label>
+                </li>
+                <li>
+                    <label>
+                        <input id="9" name="months" type="checkbox" value="12-months"/>Last 12 months</label>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="checkbox-dropdown">
+            <label>Choose a county</label>
+            <input id="county-search" placeholder="Search..." type="text">
+            <ul class="checkbox-dropdown-list" id="county-list">
+            </ul>
+        </div>
+
+        <div class="filtering-element">
+            <label class="filtering-element-label">Education:</label>
+            <div class="filtering-element-options">
+                <label class="filtering-element-option">
+                    <input id="noStudiesCheckbox" name="education" type="checkbox" value="noStudies">
+                    No studies
+                </label>
+                <label class="filtering-element-option">
+                    <input id="primaryCheckbox" name="education" type="checkbox" value="primary">
+                    Primary school
+                </label>
+                <label class="filtering-element-option">
+                    <input id="secondaryCheckbox" name="education" type="checkbox" value="secondary">
+                    Secondary school
+                </label>
+                <label class="filtering-element-option">
+                    <input id="highSchoolCheckbox" name="education" type="checkbox" value="highSchool">
+                    High-school
+                </label>
+                <label class="filtering-element-option">
+                    <input id="postSecondaryCheckbox" name="education" type="checkbox" value="postSecondary">
+                    Post-secondary education
+                </label>
+                <label class="filtering-element-option">
+                    <input id="professionalCheckbox" name="education" type="checkbox" value="professional">
+                    Professional education
+                </label>
+                <label class="filtering-element-option">
+                    <input id="universityCheckbox" name="education" type="checkbox" value="university">
+                    University education
+                </label>
+                <label class="filtering-element-option">
+                    <input id="allCheckbox" name="education" type="checkbox" value="all">
+                    All of them
+                </label>
+            </div>
+        </div>
+    </div>
+    <canvas id="myChart"></canvas>
+
+
+    <!--     <div class="filtering-element">Export<div>
+             <button id="csv" class="navbar-selector-button">CSV</button>
+             <button id="svg" class="navbar-selector-button">SVG</button>
+             <button id="pdf" class="navbar-selector-button">PDF</button>
+         </div>
+         </div>
+  -->
+</div>
+<footer class="footer">
+    <p>&copy; 2023 The project</p>
+</footer>
+<script src="../../public/app.js" type="module"></script>
+<script src='../../public/charts.js'></script>
+<script src='../../public/exports.js'></script>
+
+</body>
+
+</html>

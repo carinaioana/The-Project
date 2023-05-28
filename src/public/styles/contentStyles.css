@@ -1,0 +1,171 @@
+.content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.content-filter {
+    width: 30%;
+    height: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.content-chart {
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.map {
+    width: 80%;
+    height: 80%;
+}
+
+.content-filter-button {
+    border: 2px solid black;
+    background-color: rgb(77, 76, 76);
+    color: rgb(200, 200, 200);
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    width: 80%;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.checkbox-dropdown {
+    background: white;
+    width: 12rem;
+    border: 1px solid #aaa;
+    padding: 10px;
+    position: relative;
+    margin: 2rem;
+    user-select: none;
+}
+
+.checkbox-dropdown input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ddd;
+    font-size: 16px;
+}
+
+/* Display CSS arrow to the right of the dropdown text.txt */
+.checkbox-dropdown:after {
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 0;
+    border: 6px solid transparent;
+    border-top-color: #000;
+    top: 50%;
+    right: 10px;
+    margin-top: -3px;
+}
+
+/* Reverse the CSS arrow when the dropdown is active */
+.checkbox-dropdown.is-active:after {
+    border-bottom-color: #000;
+    border-top-color: #fff;
+    margin-top: -9px;
+}
+
+.checkbox-dropdown-list {
+    background: white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: calc(15% + 1rem); /* add margin between dropdown and arrow */
+    border: inherit;
+    border-top: none;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 999;
+    transition: opacity 0.4s ease-in-out;
+    overflow: auto;
+    pointer-events: none;
+    max-height: 10rem;
+}
+
+@media (max-height: 768px) {
+    .checkbox-dropdown-list {
+        max-height: 50vh; /* adjust the value as needed for smaller screens */
+    }
+}
+
+
+.is-active .checkbox-dropdown-list {
+    opacity: 1; /* display the dropdown */
+    pointer-events: auto; /* make sure that the user still can select checkboxes */
+}
+
+.checkbox-dropdown-list li label {
+    display: block;
+    border-bottom: 1px solid silver;
+    padding: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease-out;
+}
+
+.checkbox-dropdown-list li label:hover {
+    background-color: #555;
+    color: white;
+}
+
+.checkbox-dropdown.is-active .checkbox-dropdown-list {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.filtering-element {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.filtering-element-label {
+    margin-right: 10px;
+    white-space: nowrap; /* Added property */
+    overflow: hidden; /* Added property */
+    text-overflow: ellipsis; /* Added property */
+}
+
+.filtering-element-options {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filtering-element-option {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.filtering-element-option input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.filtering-element-option:last-child {
+    margin-right: 0;
+}
+

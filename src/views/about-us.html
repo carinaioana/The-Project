@@ -3,7 +3,7 @@
 
 <head>
   <title>Unemployment Stats</title>
-  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../public/styles/styles.css">
 </head>
 
 <body>
@@ -12,48 +12,32 @@
     <h1>Unemployment Stats</h1>
   </div>
   <div class="navbar-selector">
-    <button class="navbar-selector-button">
-      <a class="navbar-selector-button-a" href="chart1.html">Map</a>
-    </button>
-    <button class="navbar-selector-button">
-      <a class="navbar-selector-button-a" href="chart2.html">Bar Chart</a>
-    </button>
-    <button class="navbar-selector-button">
-      <a class="navbar-selector-button-a" href="pie-chart.html">Pie Chart</a>
-    </button>
-    <button class="navbar-selector-button">
-      <a class="navbar-selector-button-a" href="index.html">Home</a>
-    </button>
-    <button class="navbar-selector-button">
-      <a class="navbar-selector-button-a" href="login.html">Login</a>
-    </button>
-    <button class="navbar-selector-button">
-      <a class="navbar-selector-button-a" href="about-us.html">About us</a>
-    </button>
-    </button>
-    <div class="language-switcher">
-      <button id="english-btn" class="active">English</button>
-      <button id="romanian-btn">Romana</button>
-    </div>
+    <a class="navbar-selector-button" href="/map">Map</a>
+    <a class="navbar-selector-button" href="/bar-chart">Bar Chart</a>
+    <a class="navbar-selector-button" href="/pie-chart">Pie Chart</a>
+
+    <a class="navbar-selector-button" href="/login" id="login-link">Login</a>
+    <a class="navbar-selector-button" href="/about-us">About us</a>
+  </div>
   </div>
 
 </div>
 <div class="content">
 
   <head>
-    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../public/styles/styles.css">
   </head>
 
   <section>
     <h2>Our Team</h2>
     <div class="team-member">
-      <img src="../assets/carina.jpg" alt="Team Member 1">
+<!--      <img src="../public/assets/carina.jpg" alt="Team Member 1">-->
       <p>Hello! My name is Carina, and I am a student at faculty of Computer Science in year 2. Through my project,
         I was able to gather and analyze data from various sources to create a comprehensive overview of the current state of unemployment in Romania.
         I used various tools and techniques to visualize this data and make it easy to understand, including charts, graphs, and interactive maps. </p>
     </div>
     <div class="team-member">
-      <img src="../assets/ioana.png" alt="Team Member 2">
+    <!--  <img src="../public/assets/ioana.png" alt="Team Member 2">-->
       <p> Hi there, my name is Ioana, and I'm excited to share with you about a project I created focused on unemployment in Romania.
         My hope is that this project will help raise awareness about the issue of unemployment in Romania and encourage businesses to take action to address this problem.
         We can work towards finding solutions and improving the economic opportunities for all Romanians.
@@ -68,5 +52,6 @@
   <p>&copy; 2023 My Company</p>
 </footer>
 </div>
+<script src="../public/app.js" type="module"></script>
 </body>
 </html>

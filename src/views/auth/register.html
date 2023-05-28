@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unemployment Stats</title>
+    <link href="../../public/styles/authStyles.css" rel="stylesheet">
+    <link href="../../public/styles/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="navbar">
+    <div class="title">
+        <a class="navbar-selector-button" href="/"><h1>Unemployment Stats</h1></a>
+    </div>
+    <div class="navbar-selector">
+        <a class="navbar-selector-button" href="/map">Map</a>
+        <a class="navbar-selector-button" href="/bar-chart">Bar Chart</a>
+        <a class="navbar-selector-button" href="/pie-chart">Pie Chart</a>
+
+        <a class="navbar-selector-button" href="/login" id="login-link">Login</a>
+        <a class="navbar-selector-button" href="/about-us">About us</a>
+    </div>
+</div>
+<div class="content">
+    <section>
+        <h1>Register</h1>
+        <form class="container">
+            <label for="email">Email</label>
+            <input id="email" name="email" required type="email">
+
+            <label for="username">Username</label>
+            <input id="username" name="username" required type="text">
+
+            <label for="password">Password</label>
+            <input id="password" name="password" required type="password">
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" name="confirmPassword" required type="password">
+
+            <input type="submit" value="Register">
+        </form>
+    </section>
+</div>
+<footer class="footer">
+    <p>&copy; 2023 The project</p>
+</footer>
+<script src="../../public/app.js" type="module"></script>
+<script src="../../public/register.js" type="module"></script>
+</body>
+</html>
