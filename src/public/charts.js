@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle county search
     countySearch.addEventListener("input", function () {
-        var searchValue = this.value.toLowerCase();
-        var countyItems = document.querySelectorAll(".checkbox-dropdown-list li");
+        let searchValue = this.value.toLowerCase();
+        let countyItems = document.querySelectorAll(".checkbox-dropdown-list li");
         countyItems.forEach(function (item) {
-            var countyName = item.textContent.toLowerCase();
+            let countyName = item.textContent.toLowerCase();
             if (countyName.indexOf(searchValue) > -1) {
                 item.style.display = "block";
             } else {

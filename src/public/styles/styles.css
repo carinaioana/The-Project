@@ -163,6 +163,8 @@ p {
 
 #myChart {
     margin-right: 15rem;
+    width: 300px;
+    height: 200px;
 }
 
 @keyframes fade-in {
