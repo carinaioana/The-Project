@@ -5,7 +5,12 @@
     <title>Unemployment Stats</title>
     <link href="../../public/styles/styles.css" rel="stylesheet">
     <link href="../../public/styles/contentStyles.css" rel="stylesheet">
-    <script src="../../public/pieChart.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="../../public/app.js" type="module"></script>
+    <script src='../../public/charts.js'></script>
+    <script src="../../public/barChart.js" type="module"></script>
+
+
 </head>
 <body>
 <div class="navbar">
@@ -43,44 +48,37 @@
             </ul>
         </div>
 
-        <div class="checkbox-dropdown">
-            <label>Choose a county</label>
-            <input id="county-search" placeholder="Search..." type="text">
-            <ul class="checkbox-dropdown-list" id="county-list">
-            </ul>
-        </div>
-
         <div class="filtering-element">
             <label class="filtering-element-label">Environment:</label>
             <div class="filtering-element-options">
                 <label class="filtering-element-option">
-                    <input id="noStudiesCheckbox" name="education" type="checkbox" value="noStudies">
+                    <input id="noStudiesCheckbox" name="education" type="checkbox" value="total_urban">
                     Urban
                 </label>
                 <label class="filtering-element-option">
-                    <input id="primaryCheckbox" name="education" type="checkbox" value="primary">
+                    <input id="female_urban" name="education" type="checkbox" value="female_urban">
                     Female urban
                 </label>
                 <label class="filtering-element-option">
-                    <input id="secondaryCheckbox" name="education" type="checkbox" value="secondary">
+                    <input id="male_urban" name="education" type="checkbox" value="male_urban">
                     Male urban
                 </label>
                 <label class="filtering-element-option">
-                    <input id="highSchoolCheckbox" name="education" type="checkbox" value="highSchool">
+                    <input id="total_rural" name="education" type="checkbox" value="total_rural">
                     Rural
                 </label>
                 <label class="filtering-element-option">
-                    <input id="postSecondaryCheckbox" name="education" type="checkbox" value="postSecondary">
+                    <input id="female_rural" name="education" type="checkbox" value="female_rural">
                     Female rural
                 </label>
                 <label class="filtering-element-option">
-                    <input id="professionalCheckbox" name="education" type="checkbox" value="professional">
+                    <input id="male_rural" name="education" type="checkbox" value="male_rural">
                     Male rural
                 </label>
             </div>
         </div>
     </div>
-    <canvas id="myChart"></canvas>
+    <canvas id="barChart"></canvas>
 
 
     <!--     <div class="filtering-element">Export<div>
@@ -94,9 +92,6 @@
 <footer class="footer">
     <p>&copy; 2023 The project</p>
 </footer>
-<script src="../../public/app.js" type="module"></script>
-<script src='../../public/charts.js'></script>
-<script src='../../public/exports.js'></script>
 
 </body>
 
