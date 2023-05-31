@@ -1,0 +1,99 @@
+create table if not exists public.data
+(
+    county  varchar,
+    rate    varchar,
+    total   integer,
+    females integer,
+    males   integer,
+    paid    integer,
+    notpaid integer,
+    id      varchar not null
+        constraint data_pk
+            primary key
+);
+
+alter table public.data
+    owner to postgres;
+
+create table if not exists public.education
+(
+    county           varchar,
+    total_unemployed varchar,
+    no_studies       varchar,
+    "primary"        integer,
+    secondary        integer,
+    highschool       integer,
+    post_secondary   integer,
+    professional     integer,
+    university       integer,
+    month            varchar
+);
+
+alter table public.education
+    owner to postgres;
+
+create table if not exists public.age_group
+(
+    county           varchar,
+    total_unemployed integer,
+    under_25         integer,
+    "25_29"          integer,
+    "30_39"          integer,
+    "40_49"          integer,
+    "50_55"          integer,
+    over_55          integer,
+    month            integer
+);
+
+alter table public.age_group
+    owner to postgres;
+
+create table if not exists public.map
+(
+    county              varchar,
+    total_unemployed    varchar,
+    female_unemployed   varchar,
+    male_unemployed     varchar,
+    paid_unemployed     varchar,
+    not_paid_unemployed varchar,
+    rate                numeric,
+    female_rate         numeric,
+    male_rate           numeric,
+    month               integer
+);
+
+alter table public.map
+    owner to postgres;
+
+create table if not exists public.environment
+(
+    county            varchar,
+    total_unemployed  integer,
+    female_unemployed integer,
+    male_unemployed   integer,
+    total_urban       integer,
+    female_urban      integer,
+    male_urban        integer,
+    total_rural       integer,
+    female_rural      integer,
+    male_rural        integer,
+    month             integer
+);
+
+alter table public.environment
+    owner to postgres;
+
+create table if not exists public.users
+(
+    id       serial
+        primary key,
+    email    varchar(255) not null
+        unique,
+    username varchar(50)  not null
+        unique,
+    password varchar(255) not null
+);
+
+alter table public.users
+    owner to postgres;
+
