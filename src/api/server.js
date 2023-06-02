@@ -4,6 +4,7 @@ const authController = require("./controllers/authenticationController");
 const countyController = require("./controllers/mapController");
 const educationController = require("./controllers/educationController");
 const viewsController = require("./controllers/viewsController");
+const ageController = require("./controllers/ageController")
 
 const server = http.createServer((req, res) => {
     // Enable CORS
@@ -20,6 +21,8 @@ const server = http.createServer((req, res) => {
             countyController(req, res);
         } else if (req.url.startsWith("/api/education")) {
             educationController(req, res);
+        } else if (req.url.startsWith("/api/age")) {
+            ageController(req, res);
         } else if (req.url.startsWith("/")) {
             viewsController(req, res);
         } else {

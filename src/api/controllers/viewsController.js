@@ -53,6 +53,8 @@ function viewsController(req, res) {
         sendFile(req, res, absolutePath + "/views/charts/chart3.html");
     } else if (req.url === "/pie-chart") {
         sendFile(req, res, absolutePath + "/views/charts/pieChart.html");
+    } else if (req.url === "/age-chart") {
+        sendFile(req, res, absolutePath + "/views/charts/ageChart.html");
     } else if (req.url === "/login") {
         sendFile(req, res, absolutePath + "/views/auth/login.html");
     } else if (req.url === "/register") {

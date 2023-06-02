@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script src="../../public/app.js" type="module"></script>
     <script src='../../public/charts.js'></script>
-    <script src="../../public/barChart.js" type="module"></script>
+    <script src="../../public/ageChart.js" type="module"></script>
 
 
 </head>
@@ -22,7 +22,6 @@
         <a class="navbar-selector-button" href="/bar-chart">Bar Chart</a>
         <a class="navbar-selector-button" href="/pie-chart">Pie Chart</a>
         <a class="navbar-selector-button" href="/age-chart">Age Chart</a>
-
 
         <a class="navbar-selector-button" href="/login" id="login-link">Login</a>
         <a class="navbar-selector-button" href="/about-us">About us</a>
@@ -50,37 +49,16 @@
             </ul>
         </div>
 
-        <div class="filtering-element">
-            <label class="filtering-element-label">Environment:</label>
-            <div class="filtering-element-options">
-                <label class="filtering-element-option">
-                    <input id="noStudiesCheckbox" name="education" type="checkbox" value="total_urban">
-                    Urban
-                </label>
-                <label class="filtering-element-option">
-                    <input id="female_urban" name="education" type="checkbox" value="female_urban">
-                    Female urban
-                </label>
-                <label class="filtering-element-option">
-                    <input id="male_urban" name="education" type="checkbox" value="male_urban">
-                    Male urban
-                </label>
-                <label class="filtering-element-option">
-                    <input id="total_rural" name="education" type="checkbox" value="total_rural">
-                    Rural
-                </label>
-                <label class="filtering-element-option">
-                    <input id="female_rural" name="education" type="checkbox" value="female_rural">
-                    Female rural
-                </label>
-                <label class="filtering-element-option">
-                    <input id="male_rural" name="education" type="checkbox" value="male_rural">
-                    Male rural
-                </label>
-            </div>
+        <div class="checkbox-dropdown">
+            <label>Choose a county</label>
+            <input id="county-search" placeholder="Search..." type="text">
+            <ul class="checkbox-dropdown-list" id="county-list">
+            </ul>
         </div>
     </div>
-    <canvas id="barChart"></canvas>
+    <div class="chart-container">
+        <canvas id="ageChart"></canvas>
+    </div>
 
 
     <!--     <div class="filtering-element">Export<div>
