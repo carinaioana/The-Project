@@ -37,16 +37,17 @@ create table if not exists public.age_group
     county           varchar,
     total_unemployed integer,
     under_25         integer,
-    "25_29"          integer,
-    "30_39"          integer,
-    "40_49"          integer,
-    "50_55"          integer,
+    between_25_29    integer,
+    between_30_39    integer,
+    between_40_49    integer,
+    between_50_55    integer,
     over_55          integer,
     month            integer
 );
 
 alter table public.age_group
     owner to postgres;
+
 
 create table if not exists public.map
 (
