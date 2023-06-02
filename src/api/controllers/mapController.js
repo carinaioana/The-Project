@@ -4,6 +4,7 @@ const {
     createCounty,
     updateCounty,
     deleteCounty,
+    getOneMonth
 } = require("../services/mapService");
 
 async function mapController(req, res) {
@@ -16,6 +17,12 @@ async function mapController(req, res) {
     ) {
         const id = req.url.split("/")[3];
         await getOneCounty(req, res, id);
+    } else if (
+        req.url.match(/\/api\/map\/[0-9]+/) &&
+        req.method === "GET"
+    ) {
+        const id = req.url.split("/")[3];
+        await getOneMonth(req, res, id);
     } else if (req.url === "/api/map" && req.method === "POST") {
         await createCounty(req, res);
     } else if (

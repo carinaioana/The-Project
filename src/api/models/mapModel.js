@@ -35,6 +35,27 @@ function findById(id) {
     });
 }
 
+function findByMonth(id) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const client = await pool.connect();
+            const result = await client.query(
+                "SELECT * FROM map WHERE month = $1",
+                [id]
+            );
+            client.release();
+
+            if (result.rows.length === 0) {
+                resolve(null);
+            } else {
+                resolve(result.rows);
+            }
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
 function create(data) {
     return new Promise(async (resolve, reject) => {
         const {
@@ -147,4 +168,5 @@ module.exports = {
     create,
     update,
     remove,
+    findByMonth
 };

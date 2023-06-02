@@ -36,6 +36,22 @@ async function getOneCounty(req, res, id) {
     }
 }
 
+async function getOneMonth(req, res, id) {
+    try {
+        const oneData = await Data.findByMonth(id);
+
+        if (!oneData) {
+            res.writeHead(404, {"Content-Type": "application/json"});
+            res.end(JSON.stringify({message: "Data Not Found"}));
+        } else {
+            res.writeHead(200, {"Content-Type": "application/json"});
+            res.end(JSON.stringify(oneData));
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 /**
  * @desc Create One Data
  * @route POST /api/data
@@ -151,5 +167,6 @@ module.exports = {
     getOneCounty,
     createCounty,
     updateCounty,
-    deleteCounty
+    deleteCounty,
+    getOneMonth
 }
