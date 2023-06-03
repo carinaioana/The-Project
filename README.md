@@ -14,7 +14,7 @@ Componenta echipa:
     - src/api/controllers
     - src/api/models
     - src/api/scrips - Scripturi pentru crearea bazei de date
-    - - src/api/services
+    - src/api/services
   - src/public - Integrare Frontend + Backend
     -  src/public/assets - Imagini
     -  src/public/styles - Fisiere CSS
