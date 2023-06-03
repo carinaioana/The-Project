@@ -3,44 +3,42 @@ const path = require("path");
 const url = require("url");
 
 const mimeTable = {
-    '.js': 'application/javascript',
-    '.html': 'text/html',
-    '.css': 'text/css',
-    '.png': 'image/png',
-    '.jpg': 'image/jpg',
-    '.json': 'application/json',
-    '.txt': 'text/plain',
-    '.gif': 'image/gif',
+    ".js": "application/javascript",
+    ".html": "text/html",
+    ".css": "text/css",
+    ".png": "image/png",
+    ".jpg": "image/jpg",
+    ".json": "application/json",
+    ".txt": "text/plain",
+    ".gif": "image/gif",
 };
 const sendFile = (req, res, filePath) => {
     const fileExt = path.extname(filePath);
-    const contentType = mimeTable[fileExt] || 'application/octet-stream';
-    fs.readFile(filePath, 'utf-8', (err, data) => {
+    const contentType = mimeTable[fileExt] || "application/octet-stream";
+    fs.readFile(filePath, "utf-8", (err, data) => {
         if (err) {
             res.statusCode = 500;
-            res.end('Internal Server Error');
+            res.end("Internal Server Error");
         } else {
             res.statusCode = 200;
-            res.setHeader('Content-Type', contentType);
+            res.setHeader("Content-Type", contentType);
             res.end(data);
         }
     });
 };
 
-
 function serveStaticFile(req, res, filePath) {
     const absolutePath = path.join(__dirname, "..", "..", filePath);
-    console.log(absolutePath)
+    console.log(absolutePath);
     fs.access(absolutePath, fs.constants.F_OK, (err) => {
         if (err) {
             res.statusCode = 404;
-            res.end('Not Found');
+            res.end("Not Found");
         } else {
             sendFile(req, res, absolutePath);
         }
     });
 }
-
 
 function viewsController(req, res) {
     const absolutePath = path.join(__dirname, "..", "..");
@@ -61,12 +59,14 @@ function viewsController(req, res) {
         sendFile(req, res, absolutePath + "/views/auth/register.html");
     } else if (req.url === "/about-us") {
         sendFile(req, res, absolutePath + "/views/about-us.html");
+    } else if (req.url === "/admin") {
+        sendFile(req, res, absolutePath + "/views/auth/admin-page.html");
     } else if (req.url.startsWith("/public/")) {
         const filePath = req.url.slice(1); // Remove the leading slash
         serveStaticFile(req, res, filePath);
     } else {
         res.statusCode = 404;
-        res.end('Not Found');
+        res.end("Not Found");
     }
 }
 

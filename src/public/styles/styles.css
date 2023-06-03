@@ -177,6 +177,10 @@ p {
     width: 140vh;
 }
 
+#admin-button {
+    display: none;
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;

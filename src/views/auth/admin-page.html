@@ -1,10 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Unemployment Stats</title>
+    <link href="../../public/styles/styles.css" rel="stylesheet">
+    <link href="../../public/styles/authStyles.css" rel="stylesheet">
+    <script src="../../public/scripts/app.js" type="module"></script>
+    <script src="../../public/scripts/admin.js" type="module"></script>
+    <script src="../../public/scripts/errorHandler.js" type="module"></script>
+
 </head>
 <body>
-$END$
+<div class="navbar">
+    <div class="title">
+        <a class="navbar-selector-button" href="/"><h1>Unemployment Stats</h1></a>
+    </div>
+    <div class="navbar-selector">
+        <a class="navbar-selector-button" href="/map">Map</a>
+        <a class="navbar-selector-button" href="/bar-chart">Bar Chart</a>
+        <a class="navbar-selector-button" href="/pie-chart">Pie Chart</a>
+        <a class="navbar-selector-button" href="/age-chart">Age chart</a>
+
+
+        <a class="navbar-selector-button" href="/login" id="login-link">Login</a>
+        <a class="navbar-selector-button" href="/about-us">About us</a>
+        <a class="navbar-selector-button" href="/admin" id="admin-button">Admin</a>
+    </div>
+</div>
+<div class="content">
+    <div class="modal" id="errorModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <div class="admin-container">
+        <h2>Admin Page</h2>
+        <div id="userList">
+            <!-- User list will be dynamically generated here -->
+        </div>
+    </div>
+
+</div>
+<footer class="footer">
+    <p>&copy; 2023 The project</p>
+</footer>
+
 </body>
 </html>
