@@ -34,4 +34,4 @@ Instructiuni despre cum putem instala aceasta aplicatie
 
 ## Taskuri
 - Carina: Paginile, backendul, autentificarea, functionalitate pieChart + barChart, exporturi, documentatie
-- Ioana: Functionalitate map + ageChart
+- Ioana: Functionalitate map + ageChart, css, header&footer
