@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            background-color: #f1f1f1;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+<article>
+    <header>
+        <h1>Unemployment Statistics in Romania - Documentation</h1>
+        <h3><a href="http://localhost:3000/">Check our website here!</a></h3>
+        <section typeof="sa:AuthorsList">
+            <h2>Authors</h2>
+            <ul>
+                <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Carina" />
+                            <meta property="schema:additionalName" content="Ioana" />
+                            <meta property="schema:familyName" content="Sirbu" />
+                            <span property="schema:name">Carina-Ioana Sirbu</span>
+                        </span>
+                    <ul>
+                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                            <a href="mailto:carinasrb@yahoo.com"
+                               property="schema:email">carinasrb@yahoo.com</a>
+                        </li>
+                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                            <a href="tel:0758322337" title="Click to Call">0758322337</a>
+                        </li>
+                    </ul>
+                </li>
+                <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Ioana" />
+                            <meta property="schema:familyName" content="Astefanoae" />
+                            <span property="schema:name">Ioana Astefanoae</span>
+                        </span>
+                    <ul>
+                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                            <a href="mailto:ioana_astefanoae@gmail.com"
+                               property="schema:email">ioana_astefanoae@gmail.com</a>
+                        </li>
+                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                            <a href="tel:0753882409" title="Click to Call">0753882409</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section typeof="sa:Important information">
+            <h2>Coordinator/Faculty/Object</h2>
+            <dt><a href="https://fii-tw.notion.site/TEHNOLOGII-WEB-3ce031995e2841de872a67896b8ad15c">Colab. Gordin Stefan</a></dt>
+            <dt><a href="https://www.info.uaic.ro/">Faculty of Computer Science Iasi</a></dt>
+            <dt><a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/">Web Technologies Course</a></dt>
+        </section>
+        <section typeof="sa:Important informations">
+            <h2>Content</h2>
+        </section>
+        <ol role="directory">
+            <li><a href="#introduction">Introduction</a>
+                <ol role="introduction-directory">
+                    <li><a href="#introduction__purpose">Purpose</a></li>
+                    <li><a href="#introduction__audience">Intended Audience and Reading Suggestions</a></li>
+                    <li><a href="#introduction__product-scope">Product Scope</a></li>
+                    <li><a href="#introduction__references">References</a></li>
+                </ol>
+            </li>
+            <li><a href="#overall-description">Overall Description</a>
+                <ol role="#description-directory">
+                    <li><a href="#overall-description__product-perspective">Product Perspective</a></li>
+                    <li><a href="#overall-description__product-functions">Product Functions</a></li>
+                    <li><a href="#overall-description__operation-enviroment">Operating Environment</a></li>
+                    <li><a href="#overall-description__design-constraints">Design and Implementation Constraints</a></li>
+                    <li><a href="#overall-description__user-documentation">User Documentation</a></li>
+                </ol>
+            </li>
+            <li><a href="#interfacereq">External Interface Requirements</a>
+                <ol role="#interfacereq-directory">
+                    <li><a href="#interfacereq__user-interfaces">User Interfaces</a></li>
+                </ol>
+            </li>
+            </li>
+            <li><a href="#systemfeatures">System Features</a>
+                <ol role="#systemfeatures-directory">
+                    <li><a href="#systemfeatures__charts">Charts</a></li>
+                    <li><a href="#systemfeatures__login">Login</a></li>
+                    <li><a href="#systemfeatures__register">Register</a></li>
+                    <li><a href="#systemfeatures__map">Map</a></li>
+                    <li><a href="#systemfeatures__home-aboutus">Home and About us</a></li>
+                    </ol>
+            </li>
+            <li><a href="#week8utils__routes">Routes</a></li>
+        </ol>
+        </div>
+    </header>
+    <section id="introduction" role="doc-introduction">
+        <h2>1. Introduction</h2>
+        <section id="introduction__purpose" role="doc-introduction">
+            <h3>1.1 Purpose</h3>
+            <p>This documentation aims to provide insights into the app's functionality, features,
+                and benefits, enabling users and developers to gain a thorough understanding of the
+                app's capabilities and its value in exploring unemployment statistics in Romania.</p>
+        </section>
+        <section id="introduction__audience" role="doc-introduction">
+            <h3>1.2 Intended Audience and Reading Suggestions</h3>
+            <p>
+                For developers interested in the technical aspects of the Unemployment Statistics App, this documentation
+                offers insights into the app's architecture, design principles, and data sources.
+                Users interested in exploring unemployment statistics in Romania will find this documentation valuable in
+                understanding how to navigate the Unemployment Statistics App effectively. It provides an overview of the app's
+                user interface, available features, and data visualization options.
+            </p>
+        </section>
+        <section id="introduction__product-scope" role="doc-introduction">
+            <h3>1.3 Product Scope</h3>
+            <p>
+                The Unemployment Statistics App is a comprehensive tool that provides accurate and up-to-date statistical information about unemployment in Romania.
+                The app encompasses the following key features:
+
+                <p> 1.3.1 Interactive Map with County-Based Statistics: The app includes an interactive map that allows users to explore unemployment statistics based on different counties in Romania.
+                    Users can visualize the variations in unemployment rates across the country, identify areas with higher or lower levels of unemployment, and gain insights into regional trends.
+                    The map provides an intuitive and visually appealing way to understand the spatial distribution of unemployment. </p>
+                <p> 1.3.2 Comparative Analysis by Demographic Factors: The app enables users to perform comparative analysis by demographic factors, including age, education, environment, and county.
+                    Users can select specific demographic variables and compare the corresponding unemployment rates. This feature helps users understand how unemployment affects different
+                    demographic groups, identify disparities, and uncover patterns or trends within specific categories. </p>
+               <p> 1.3.3 Data Visualization and Insights:  The app offers a variety of data visualization options to enhance understanding and interpretation of unemployment statistics.
+                    Users can access visually appealing charts, graphs, and maps that present data in a clear and concise manner.
+                    User-Friendly Interface and Customization:  It offers intuitive navigation and interactive features that allow users to customize their data exploration.
+                    Users can filter data based on specific criteria, adjust visualizations to their preferences, and save or export selected statistics for further analysis
+                   or reporting purposes.</p>
+            </p>
+        </section>
+        <section id="introduction__references" role="doc-introduction">
+            <h3>1.4 References</h3>
+            <p>
+                <dt><a href="https://data.gov.ro/dataset?q=somaj&sort=metadata_modified+desc">Data Gov Ro</a></dt>
+                <dt><a href="http://www.mmuncii.ro/j33/index.php/ro/transparenta/statistici/date-statistice?id=6505:statistici-somaj-2021&catid=29:domenii">Statistics 2022</a></dt>
+                <dt><a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/">Site Dr. Sabin-Corneliu Buraga</a></dt>
+                <dt><a href="https://www.chartjs.org/docs/latest/charts/bar.html">Chart.js</a></dt>
+            </p>
+        </section>
+    </section>
+    <section id="overall-description" role="doc-overall-description">
+        <h2>2. Overall Description</h2>
+        <section id="overall-description__product-perspective" role="doc-overall-description">
+            <h3>2.1 Product Perspective</h3>
+            <p>
+                The Unemployment Statistics App is an application that provides users with accurate and up-to-date statistical information about
+                unemployment in Romania.The app utilizes web technologies, data visualization, and APIs to enhance user experience. It offers features such as national
+                and regional unemployment rates, demographic analysis, and geospatial data visualization.
+            </p>
+        </section>
+        <section id="overall-description__product-functions" role="doc-overall-description">
+            <h3>2.2 Product Functions</h3>
+            <p>Users will have access to the following features:</p>
+            <ul>
+                <li>Login</li>
+                <ul>
+                    <li>as user - can view and modify the statistics</li>
+                    <li>as admin - same as user + can manage users</li>
+                </ul>
+                <li>Register</li>
+            </ul>
+            <ul>
+                <li>Map chart</li>
+                <ul>
+                    <li>Choose one timeframe</li>
+                    <li>Choose filters (can delete or add more)</li>
+                </ul>
+            </ul>
+            <ul>
+                <li>Bar chart</li>
+                <ul>
+                    <li>Choose one timeframe</li>
+                    <li>Choose environment filters (can delete or add more)</li>
+                </ul>
+            </ul>
+            <ul>
+                <li>Pie chart</li>
+                <ul>
+                    <li>Choose one timeframe</li>
+                    <li>Choose one county</li>
+                    <li>Choose education filters (can delete or add more)</li>
+                </ul>
+            </ul>
+            <ul>
+                <li>Age chart</li>
+                <ul>
+                    <li>Choose one timeframe</li>
+                    <li>Choose one county</li>
+                </ul>
+            </ul>
+            <ul>
+                If you want to star over, refresh the page and restart the process with the charts.
+            </ul>
+            <ul>
+                <li>
+                    Change display colors on preferences.
+                </li>
+            </ul>
+        </section>
+        <section id="overall-description__operation-enviroment" role="doc-overall-description">
+            <h3>2.3 Operating Environment</h3>
+            <p>
+                The application will work on all operating systems available, such
+                as Windows, Linux, macOS, on all web browsers and on mobile
+                operating systems such as iOS, Android and Windows. A stable internet connection is needed for using
+                the application.
+            </p>
+        </section>
+        <section id="overall-description__design-constraints" role="doc-overall-description">
+            <h3>2.4 Design and Implementation Constraints</h3>
+            <p>
+                The design and implementation of the Unemployment Statistics App involve several constraints, particularly in terms of the technologies used for the front-end and back-end development.
+                The following constraints need to be considered:
+            <ul>
+                <li>Front-End:</li>
+                <ul>
+                    <li>HTML: The app's front-end will be developed using HTML, a widely supported markup language for structuring and presenting web content.</li>
+                    <li>CSS + Responsive: Cascading Style Sheets (CSS) will be utilized to define the app's visual layout, styling, and presentation, ensuring a consistent and visually appealing user interface.</li>
+                    <li>JavaScript: JavaScript will be employed for enabling dynamic interactions and enhancing user experience through interactivity and data manipulation.</li>
+                </ul>
+            </ul>
+            <ul>
+                <li>Back-End:</li>
+                <ul>
+                    <li>Node.js:  The back-end of the app will be implemented using Node.js, a JavaScript runtime environment that allows server-side execution of JavaScript code. Node.js offers scalability and non-blocking I/O operations.</li>
+                    <li>PostgreSQL: PostgreSQL, a powerful open-source relational database management system, can be considered for storing and managing the app's data. PostgreSQL offers robust features, data integrity, and scalability,
+                        making it suitable for handling unemployment statistics.</li>
+                    <li>JSON: JSON (JavaScript Object Notation) will be used as a lightweight data interchange format, facilitating efficient communication between the front-end and back-end components of the app.</li>
+                    <li>
+                        Exports:
+                        <ul>
+                            <li>
+                                CSV: This feature allows users to download the data and use it in external applications or perform further analysis.
+                            </li>
+                            <li>
+                                SVG: To enhance data visualization, the app can generate SVG (Scalable Vector Graphics) charts. SVG charts provide interactive and visually appealing representations of unemployment statistics.
+                            </li>
+                            <li>
+                                PDF: The app may include the functionality to generate PDF (Portable Document Format) reports or summaries based on selected unemployment statistics. PDF reports provide a convenient way for users to present or share information.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+            </p>
+        </section>
+        <section id="overall-description__user-documentation" role="doc-overall-description">
+            <h3>2.5 User Documentation</h3>
+            <p>
+                Based on the way the application was thought and built, the first time users will navigate through
+                it easily
+                and they will not need any type of technical knowledge. The developed product is very friendly. If
+                an user needs help navigating through it, this report will answer to all of their questions.
+            </p>
+        </section>
+    </section>
+    <section id="interfacereq" role="interfacereq-description">
+        <h2>3. External Interface Requirements</h2>
+        <section id="interfacereq__user-interfaces" role="interfacereq-description">
+            <h3>3.1 User Interfaces</h3>
+            <figure>
+                <p>Home Page that includes the locations</p>
+                <img src="../public/assets/HomePage.png" alt="HomePage" style="width: 500px; height: auto" />
+            </figure>
+            <figure>
+                <p>Login Page</p>
+                <img src="../public/assets/Login.png" alt="LoginPage" style="width: 500px; height: auto" />
+            </figure>
+            <figure>
+                <p>Register Page</p>
+                <img src="../public/assets/Register.png" alt="RegisterPage" style="width: 500px; height: auto" />
+            </figure>
+            <figure>
+                <p>About us Page</p>
+                <img src="../public/assets/About-us.png" alt="AboutUsPage" style="width: 500px; height: auto" />
+            </figure>
+            <figure>
+                <p>Map Page</p>
+                <img src="../public/assets/MapPage.png" alt="MapPage" style="width: 500px; height: auto" />
+            </figure>
+            <figure>
+                <p>Bar chart Page</p>
+                <img src="../public/assets/BarChart.png" alt="BarChartPage" style="width: 500px; height: auto" />
+            </figure>
+            <figure>
+                <p>Pie chart Page</p>
+                <img src="../public/assets/PieChart.png" alt="PieChartPage" style="width: 500px; height: auto" />
+            </figure>
+            <figure>
+                <p>Age chart Page</p>
+                <img src="../public/assets/AgeChart.png" alt="AgeChartPage" style="width: 500px; height: auto" />
+            </figure>
+            <figure>
+                <p>Page not found</p>
+                <img src="../public/assets/PageNotFound.png" alt="PageNotFound" style="width: 500px; height: auto" />
+            </figure>
+
+        </section>
+    </section>
+    <section id="systemfeatures" role="systemfeatures-description">
+        <h2>4. System Features</h2>
+        <section id="systemfeatures__charts" role="systemfeatures-description">
+            <h3>4.1 Charts</h3>
+            <ul>
+                <li>4.1.1 Description and Priority</li>
+                <ul>
+                    <li>
+                        Description: This feature enables users to visualize unemployment statistics using different types of charts based on selected filters.
+                        The available chart types include a pie chart for education filters, a horizontal bar chart for environment filters, and a bar chart for age
+                        filters. Users can also apply additional filters such as selecting a specific time frame (3, 6, or 12 months ago) and choosing a specific county
+                        in Romania. The charts are generated using the Chart.js library, providing interactive and visually appealing data representations.
+                    </li>
+                    <li>Priority: High</li>
+                </ul>
+                <li>4.1.2 Stimulus/Response Sequences List</li>
+                <ul>
+                    Stimulus:
+                    <li>
+                        User selects education/environment/age filters, time frame, and a specific county.
+                    </li>
+                    Response:
+                    <li>
+                        App retrieves unemployment data based on the selected education filters, time frame, and county.  </li>
+                    <li>
+                        App generates a pie chart using Chart.js to visualize the unemployment statistics for the selected filters.   </li>
+                    <li>
+                        User can hover over the chart slices/bars to see the corresponding label and data.</li>
+                </ul>
+                <li>4.1.3 Functional Requirements</li>
+                <ul>
+                    <li>
+                        The app should provide a user interface with options to select education filters, environment filters, and age filters.
+                    </li>
+                    <li> Users should be able to select a specific time frame (3, 6, or 12 months ago) and choose a specific county in Romania using either
+                        typing or selecting from a list.</li>
+                    <li> The app should support the ability to select and unselect multiple filters, allowing users to customize the displayed data on the charts.</li>
+                    <li> Chart.js library should be integrated into the app to generate pie charts for education filters, horizontal bar charts for environment
+                        filters, and bar charts for age filters.</li>
+                    <li> The app should retrieve unemployment data from the database using appropriate APIs based on the selected filters.</li>
+                    <li> The generated charts should be interactive, allowing users to hover over chart elements to view labels and data.</li>
+                </ul>
+            </ul>
+        </section>
+        <section id="systemfeatures__login" role="systemfeatures-description">
+            <h3>4.2. Login</h3>
+            <ul>
+                <li>4.2.1 Description and Priority</li>
+                <ul>
+                    <li>
+                        Description: This feature allows users to log in to the Unemployment Statistics App using their username and password.
+                        The app will search for the entered credentials in the database and validate them. If the credentials are correct,
+                        the user will be logged in and granted access to the app's features. If the credentials are incorrect, a pop-up notification
+                        will inform the user about the incorrect login attempt. Once logged in, users can navigate and interact with the charts.
+                        Additionally, an admin role exists, which grants access to user account management, including the ability to delete user accounts.
+                        The login feature is essential for user authentication and security.</li>
+                    <li>Priority: High
+                    </li>
+                </ul>
+                <li>4.2.2 Stimulus/Response Sequences List</li>
+                <ul>
+                    <li>Feature: Login</li>
+
+                    Stimulus:
+                    <li>User enters their username and password and clicks the login button.                    </li>
+                    Response:
+                    <li>The app validates the entered credentials by searching for them in the database.
+                    </li>
+                    <li> If the credentials are correct, the user is logged in and granted access to the app's features, including chart interaction.</li>
+                    <li> If the credentials are incorrect, a pop-up notification is displayed, informing the user about the incorrect login attempt.</li>
+
+                    <li>Feature: Account Management (Admin Role)</li>
+
+                    Stimulus:
+                    <li>Admin user logs in.</li>
+                    Response:
+                    <li>The app recognizes the user as an admin and provides additional options for account management.                    </li>
+                    <li>The admin user can view a list of user accounts and choose to delete specific user accounts if necessary.</li>
+
+                    <li>Feature: Logout</li>
+
+                    Stimulus:
+                    <li>User clicks on the logout button.</li>
+                    Response:
+                    <li>The app logs the user out, terminating their session and returning to the login screen.</li>
+                </ul>
+                <li>4.2.3 Functional Requirements</li>
+                <ul>
+                    <li>The app should provide a login interface where users can enter their username and password.                    </li>
+                    <li>The app should provide a logout button or option to allow users to log out of their session.</li>
+                    <li>The admin user should be able to view a list of user accounts and delete specific user accounts if necessary.</li>
+                </ul>
+            </ul>
+        </section>
+        <section id="systemfeatures__register" role="systemfeatures-description">
+            <h3>4.3 Register</h3>
+            <ul>
+                <li>4.3.1 Description and Priority</li>
+                <ul>
+                    <li>
+                        Description: This feature allows users to register for a new account in the Unemployment Statistics App.
+                        Users can access the registration page from the login page if they do not have an existing account.
+                        During the registration process, users enter their email, choose a password, and confirm the password.
+                        Once registered, users can then log in to the app using their newly created account credentials.
+                        The register feature is essential for allowing new users to join and access the app's functionalities.
+                    </li>
+                    <li>Priority: High</li>
+                </ul>
+                <li>4.3.2 Stimulus/Response Sequences List</li>
+                <ul>
+                    Stimulus:
+                    <li>
+                        User clicks on the register button on the login page.
+                    </li>
+                    <li>
+                        User successfully completes the registration form.
+                    </li>
+                    Response:
+                    <li>The app redirects the user to the registration page.</li>
+                    <li>User enters their email, chooses a password, and confirms the password.</li>
+                    <li>User clicks the register button to submit the registration form.</li>
+                    <li>The app validates the user's input and creates a new account using the provided email and password.</li>
+                    <li>The newly created account is stored in the database.</li>
+                    <li>The app confirms the successful account creation and redirects the user back to the login page.</li>
+                </ul>
+                <li>4.3.3 Functional Requirements</li>
+                <ul>
+                    <li>The app should provide a registration page accessible from the login page.                    </li>
+                    <li>The registration page should include input fields for the user's email, password, and password confirmation.</li>
+                    <li>The app should validate the user's input, ensuring that the email is in the correct format and that the password and confirmation match.</li>
+                </ul>
+            </ul>
+        </section>
+        <section id="systemfeatures__map" role="systemfeatures-description">
+            <h3>4.4 Map</h3>
+            <ul>
+                <li>4.4.1 Description and Priority</li>
+                <ul>
+                    <li>
+                        Description: The Map feature in the Unemployment Statistics App provides users with an interactive
+                        map displaying information about unemployment in different counties of Romania. Users can apply filters
+                        for the time frame and general unemployment information. The map visually represents the data using
+                        different color ranges, indicating the number of unemployed individuals in each county based on the selected filters.
+                        The Map feature is a key component of the app, allowing users to visually explore and analyze unemployment data geographically.
+                    </li>
+                    <li>Priority: High</li>
+                </ul>
+                <li>4.4.2 Stimulus/Response Sequences List</li>
+                <ul>
+                    Stimulus:
+                    <li>User selects filters for the time frame and general unemployment information.    </li>
+                    Response:
+                    <li>The app retrieves the relevant unemployment data from the database based on the selected filters.</li>
+                    <li>The app generates a map of Romania with different colors representing the number of unemployed individuals in each county.  </li>
+                    <li> User can interact with the map, zoom in/out, and hover over counties to view detailed information about the unemployment rate and other relevant data.</li>
+                </ul>
+                <li>4.4.3 Functional Requirements</li>
+                    <ul>
+                        <li>The app should provide a user interface with options to select filters for the time frame and general unemployment information (education, environment, and age).</li>
+                        <li>The app should generate an interactive map of Romania, displaying different colors representing the number of unemployed individuals in each county.</li>
+                    </ul>
+
+                </ul>
+        </section>
+        <section id="systemfeatures__home-aboutus" role="systemfeatures-description">
+            <h3>4.5 Home and About us</h3>
+            <ul>
+                <li>4.5.1 Description and Priority</li>
+                <ul>
+                    <li>The Home feature in the Unemployment Statistics App provides users with essential information and a brief overview of the app's purpose. It includes text content that informs users about  its significance in analyzing unemployment statistics in Romania.</li>
+                    <li> Priority: Medium</li>
+                    <li> The About Us feature provides users with information about the creators or developers of the Unemployment Statistics App. It typically includes text content that introduces the team, their backgrounds, expertise, and motivations behind developing the app. The About Us section aims to establish trust and credibility with the users by providing transparency about the people behind the app's creation.</li>
+                    <li> Priority: Low</li>
+                    <li>4.5.2 Stimulus/Response Sequences List</li>
+                </ul>
+                    <ul>
+                        <li>Feature:Home</li>
+                        Stimulus:
+                        <li>
+                            User navigates to the Home page or accesses the app for the first time.
+                        </li>
+                        Response:
+                        <li>The app displays the Home page, showcasing essential information about the app's purpose, functionality, and significance.</li>
+                        <li>The users can also start navigating through the pages, pressing the buttons from footer</li>
+
+                        <li>Feature:About us</li>
+                        Stimulus:
+                        <li>
+                            User clicks on the About Us section or navigates to the About Us page.
+                        </li>
+                        Response:
+                        <li>The app displays the About Us page, containing text content that introduces the creators or developers of the app.</li>
+                    </ul>
+
+                    <li>4.5.3 Functional Requirements</li>
+                    <ul>
+                        <li>The app should provide a Home page as the initial landing page for users.</li>
+                        <li>The app should include an About Us section or page accessible from the navigation menu.</li>
+                    </ul>
+                </ul>
+        </section>
+    <section id="week8utils__routes" role="week8utils-description">
+            <h3>6.1 Routes</h3>
+            <ul>
+                <li>
+                    <a href="http://localhost:3000/login">Login Route: http://localhost:3000/login</a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/register">Register Route: http://localhost:3000/register </a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/map">Map Route:http://localhost:3000/map </a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/pie-chart">Pie chart Route: http://localhost:3000/pie-chart</a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/bar-chart">Bar chart Route:http://localhost:3000/bar-chart </a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/age-chart">Age chart Route:http://localhost:3000/age-chart </a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/about-us">About us Route: http://localhost:3000/about-us</a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000/">Home Route: http://localhost:3000/ </a>
+                </li>
+                <li>Another API S for Postman:</li>
+                <ul>
+                <li>Education:http://localhost:3000/api/education </li>
+                <li>Environment: http://localhost:3000/api/environment </li>
+                <li>Age: http://localhost:3000/api/age </li>
+                <li>Map: http://localhost:3000/api/map </li>
+                <li>Education: http://localhost:3000/api/education</li>
+
+                <li>These routes also have implemented the CRUD operations + another</li>
+                    <li>Get one, Get all, Create one, Update one, Delete one</li>
+                    <li>Find by county (example: ../IASI)</li>
+                    <li>Find by time (example: ../3)</li>
+                    <li>Find by county & time & filer (example: with parameters)</li>
+                </ul>
+            </ul>
+        </section>
+    </section>
+</article>
+</body>
+</html>
