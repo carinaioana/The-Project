@@ -15,14 +15,20 @@
         <a class="navbar-selector-button" href="/bar-chart">Bar Chart</a>
         <a class="navbar-selector-button" href="/pie-chart">Pie Chart</a>
         <a class="navbar-selector-button" href="/age-chart">Age chart</a>
+        <a class="navbar-selector-button" href="/admin" id="admin-button">Admin</a>
 
         <a class="navbar-selector-button" href="/login" id="login-link">Login</a>
         <a class="navbar-selector-button" href="/about-us">About us</a>
-        <a class="navbar-selector-button" href="/admin" id="admin-button">Admin</a>
     </div>
 </div>
 <div class="content">
-    <section>
+    <div class="modal" id="errorModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+    <div class="container">
         <h1>Register</h1>
         <form class="container">
             <label for="email">Email</label>
@@ -39,7 +45,7 @@
 
             <input type="submit" value="Register">
         </form>
-    </section>
+    </div>
 </div>
 <footer class="footer">
     <p>&copy; 2023 The project</p>

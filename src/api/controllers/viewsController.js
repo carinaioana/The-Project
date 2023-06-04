@@ -48,7 +48,7 @@ function viewsController(req, res) {
     } else if (req.url === "/map") {
         sendFile(req, res, absolutePath + "/views/charts/mapChart.html");
     } else if (req.url === "/bar-chart") {
-        sendFile(req, res, absolutePath + "/views/charts/chart3.html");
+        sendFile(req, res, absolutePath + "/views/charts/barChart.html");
     } else if (req.url === "/pie-chart") {
         sendFile(req, res, absolutePath + "/views/charts/pieChart.html");
     } else if (req.url === "/age-chart") {

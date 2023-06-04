@@ -5,10 +5,11 @@
     <title>Unemployment Stats</title>
     <link href="../../public/styles/styles.css" rel="stylesheet">
     <link href="../../public/styles/contentStyles.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script src="../../public/scripts/app.js" type="module"></script>
     <script src='../../public/scripts/charts.js'></script>
     <script src="../../public/scripts/barChart.js" type="module"></script>
+    <script src="../../public/scripts/errorHandler.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
 
 </head>
@@ -37,15 +38,15 @@
             <ul class="checkbox-dropdown-list">
                 <li>
                     <label>
-                        <input id="3" name="months" type="checkbox" value="3-months"/>Last 3 months</label>
+                        <input id="3" name="months" type="checkbox" value="3"/>Last 3 months</label>
                 </li>
                 <li>
                     <label>
-                        <input id="6" name="months" type="checkbox" value="6-months"/>Last 6 months</label>
+                        <input id="6" name="months" type="checkbox" value="6"/>Last 6 months</label>
                 </li>
                 <li>
                     <label>
-                        <input id="9" name="months" type="checkbox" value="12-months"/>Last 12 months</label>
+                        <input id="9" name="months" type="checkbox" value="12"/>Last 12 months</label>
                 </li>
 
             </ul>
@@ -55,49 +56,49 @@
             <label class="filtering-element-label">Environment:</label>
             <div class="filtering-element-options">
                 <label class="filtering-element-option">
-                    <input id="noStudiesCheckbox" name="education" type="checkbox" value="total_urban">
+                    <input id="total_urban" name="environment" type="checkbox" value="total_urban">
                     Urban
                 </label>
                 <label class="filtering-element-option">
-                    <input id="female_urban" name="education" type="checkbox" value="female_urban">
+                    <input id="female_urban" name="environment" type="checkbox" value="female_urban">
                     Female urban
                 </label>
                 <label class="filtering-element-option">
-                    <input id="male_urban" name="education" type="checkbox" value="male_urban">
+                    <input id="male_urban" name="environment" type="checkbox" value="male_urban">
                     Male urban
                 </label>
                 <label class="filtering-element-option">
-                    <input id="total_rural" name="education" type="checkbox" value="total_rural">
+                    <input id="total_rural" name="environment" type="checkbox" value="total_rural">
                     Rural
                 </label>
                 <label class="filtering-element-option">
-                    <input id="female_rural" name="education" type="checkbox" value="female_rural">
+                    <input id="female_rural" name="environment" type="checkbox" value="female_rural">
                     Female rural
                 </label>
                 <label class="filtering-element-option">
-                    <input id="male_rural" name="education" type="checkbox" value="male_rural">
+                    <input id="male_rural" name="environment" type="checkbox" value="male_rural">
                     Male rural
                 </label>
+                <label>You can choose maximum 3 filters</label>
             </div>
         </div>
     </div>
+
+
     <div class="chart-container">
         <canvas id="barChart"></canvas>
     </div>
-
-
-    <!--     <div class="filtering-element">Export<div>
-             <button id="csv" class="navbar-selector-button">CSV</button>
-             <button id="svg" class="navbar-selector-button">SVG</button>
-             <button id="pdf" class="navbar-selector-button">PDF</button>
-         </div>
-         </div>
--->
+    <div>
+        <button class="content-filter-button" id="pdf">PDF</button>
+    </div>
 </div>
 <footer class="footer">
     <p>&copy; 2023 The project</p>
 </footer>
 
 </body>
-
+<script crossorigin="anonymous"
+        integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+        referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
 </html>

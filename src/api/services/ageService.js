@@ -133,10 +133,22 @@ async function deleteAge(req, res, id) {
     }
 }
 
+async function getByIdAndMonth(req, res, id, month) {
+    try {
+        const data = await Data.findByIdAndMonth(id, month);
+
+        res.writeHead(200, {"Content-Type": "application/json"});
+        res.end(JSON.stringify(data));
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
     getAllAges,
     getOneAge,
     createAge,
     updateAge,
-    deleteAge
+    deleteAge,
+    getByIdAndMonth
 }

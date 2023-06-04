@@ -124,10 +124,39 @@ function remove(id) {
     });
 }
 
+function findByIdAndMonth(id, month) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const client = await pool.connect();
+            const query = `select county, under_25, between_25_29, between_30_39, between_40_49, between_50_55, over_55
+                           from age_group
+                           where county = ANY ($1::text[])
+                             and month = $2;`;
+            const counties = id.split(','); // Split the counties string into an array
+            const values = [counties, month];
+
+            console.log(values);
+
+            const result = await client.query(query, values);
+            client.release();
+
+            if (result.rows.length === 0) {
+                resolve(null);
+            } else {
+                resolve(result.rows);
+            }
+        } catch (error) {
+            reject(error);
+        }
+    });
+
+}
+
 module.exports = {
     findAll,
     findById,
     create,
     update,
     remove,
+    findByIdAndMonth
 };

@@ -1,6 +1,7 @@
 const {
   getAllEnvironment,
   getOneEnvironment,
+  getByMonthAndColumn,
 } = require("../services/environmentService");
 
 async function environmentController(req, res) {
@@ -13,16 +14,13 @@ async function environmentController(req, res) {
     const id = req.url.split("/")[3];
     await getOneEnvironment(req, res, id);
   } else if (
-    req.url.match(
-      /\/api\/environment\?month=\d+&county=[A-Za-z\s]+&column=[A-Za-z_]+/
-    ) &&
+    req.url.match(/\/api\/environment\?month=\d+&county=[A-Za-z_]+/) &&
     req.method === "GET"
   ) {
     const urlParams = new URLSearchParams(req.url.split("?")[1]);
     const month = urlParams.get("month");
-    const county = urlParams.get("county");
-    const column = urlParams.get("column");
-    await getByMonthAndId(req, res, month, county, column);
+    const column = urlParams.get("county");
+    await getByMonthAndColumn(req, res, month, column);
   } else {
     res.writeHead(404, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ message: "Route Not Found" }));

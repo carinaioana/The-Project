@@ -9,8 +9,11 @@
     <script src="../../public/scripts/app.js" type="module"></script>
     <script src='../../public/scripts/charts.js'></script>
     <script src="../../public/scripts/pieChart.js" type="module"></script>
-
-
+    <script src="../../public/scripts/errorHandler.js" type="module"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-Y/m9reebIxHNDYNSMG3VJwc6eFGM9dnUcIwELJcebO7YvZ9OEkOMTGAZnwGvnErU3aNNoby3yOobTXTseQ7S8A=="
+            referrerpolicy="no-referrer"
+            src="https://cdnjs.cloudflare.com/ajax/libs/json2csv/5.0.7/json2csv.umd.min.js"></script>
 </head>
 <body>
 <div class="navbar">
@@ -24,7 +27,6 @@
         <a class="navbar-selector-button" href="/age-chart">Age chart</a>
 
         <a class="navbar-selector-button" href="/admin" id="admin-button">Admin</a>
-
 
         <a class="navbar-selector-button" href="/login" id="login-link">Login</a>
         <a class="navbar-selector-button" href="/about-us">About us</a>
@@ -90,26 +92,21 @@
                     <input id="university" name="education" type="checkbox" value="university">
                     University education
                 </label>
+                <label>To uncheck the boxes, click on the labels above the chart</label>
             </div>
         </div>
     </div>
     <div class="chart-container">
         <canvas id="myChart"></canvas>
     </div>
-
-    <!--     <div class="filtering-element">Export<div>
-             <button id="csv" class="navbar-selector-button">CSV</button>
-             <button id="svg" class="navbar-selector-button">SVG</button>
-             <button id="pdf" class="navbar-selector-button">PDF</button>
-         </div>
-         </div>
--->
+    <div>
+        <button class="content-filter-button" id="csv">CSV</button>
+    </div>
 </div>
 <footer class="footer">
     <p>&copy; 2023 The project</p>
 </footer>
 
-<script src='../../public/scripts/exports.js'></script>
 </body>
 
 </html>

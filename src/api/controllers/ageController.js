@@ -4,7 +4,9 @@ const {
     createAge,
     updateAge,
     deleteAge,
+    getByIdAndMonth
 } = require("../services/ageService");
+const {getByMonthAndColumn} = require("../services/environmentService");
 
 async function ageController(req, res) {
     //API age
@@ -30,6 +32,14 @@ async function ageController(req, res) {
     ) {
         const id = req.url.split("/")[3];
         await deleteAge(req, res, id);
+    } else if (
+        req.url.match(/\/api\/age\?month=\d+&county=[A-Za-z_]+/) &&
+        req.method === "GET"
+    ) {
+        const urlParams = new URLSearchParams(req.url.split("?")[1]);
+        const county = urlParams.get("county");
+        const month = urlParams.get("month");
+        await getByIdAndMonth(req, res, county, month);
     } else {
         res.writeHead(404, {"Content-Type": "application/json"});
         res.end(JSON.stringify({message: "Route Not Found"}));

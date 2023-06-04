@@ -1,4 +1,5 @@
 import logout from "./app.js";
+import {hideErrorModal, showErrorModal} from "./errorHandler.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     let selectedEducation;
@@ -7,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let apiUrl;
     let selectedInputsCounter = 0;
     let check;
-    let totalStudies = 2000;
+    let totalStudies = 5000;
+    const token = localStorage.getItem("token");
     const CHART_COLORS = {
         red: "rgb(255, 99, 132)",
         orange: "rgb(255, 159, 64)",
@@ -77,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             check = 0;
             console.log(`Button ${checkboxValue} unchecked`);
-            deleteFromChart(checkboxValue)
+            deleteFromChart(checkboxValue);
             selectedInputsCounter--;
         }
         fetchData();
@@ -101,21 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function deleteFromChart(education) {
-        /* const checkedEducation = Array.from(column)
-             .filter((checkbox) => checkbox.checked)
-             .map((checkbox) => checkbox.value);
 
-         chart.data.labels = chart.data.labels.filter((label) =>
-             checkedEducation.includes(label)
-         );
-
-         chart.data.datasets.forEach((dataset) => {
-             dataset.data = dataset.data.filter((_, index) =>
-                 checkedEducation.includes(chart.data.labels[index])
-             );
-         });
-
-         chart.update();*/
         const labelIndex = chart.data.labels.indexOf(education);
 
         if (labelIndex !== -1) {
@@ -146,21 +134,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
         apiUrl = `http://localhost:3000/api/education?month=${selectedTime}&county=${selectedCounty}&column=${selectedEducation}`;
 
-        fetch(apiUrl)
+        fetch(apiUrl, {headers: {Authorization: `Bearer ${token}`}})
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Request failed");
                 }
                 return response.json();
+
             })
             .then((data) => {
                 console.log(data);
                 updateChart(data);
             })
             .catch((error) => {
+                showErrorModal("You must login first!");
+                setTimeout(hideErrorModal, 3000);
+                console.log("Error:", error.message);
+            });
+
+    }
+
+    function fetchCsvData() {
+
+        let csvUrl = `http://localhost:3000/api/education/${selectedTime}`
+
+        fetch(csvUrl, {headers: {Authorization: `Bearer ${token}`}})
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Request failed");
+                }
+                return response.text(); // Use response.text() to retrieve the response body as text
+            })
+            .then((csvData) => {
+                let filename1 = 'data.csv';
+                exportCSV(filename1, csvData);
+            })
+            .catch((error) => {
+                showErrorModal("You must login first!");
+                setTimeout(hideErrorModal, 3000);
                 console.log("Error:", error.message);
             });
     }
+
+
+    const csvButton = document.getElementById('csv')
+    csvButton.addEventListener("click", () => {
+        fetchCsvData()
+    })
+
+
+    function exportCSV(filename, csvData) {
+        const element = document.createElement("a");
+        element.setAttribute("href", `data:text/csv;charset=utf-8,${csvData}`);
+        element.setAttribute("download", filename);
+
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+
+    }
+
 
     const chart = new Chart(ctx, {
         type: "pie",
@@ -179,159 +212,5 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         },
     });
+
 });
-
-/*
-const canvas = document.getElementById('myChart');
-const ctx = canvas.getContext('2d');
-
-const column = document.querySelectorAll('input[name="education"]');
-for (let i = 0; i < column.length; i++) {
-    column[i].addEventListener('change', handleCheckbox);
-}
-const month = document.querySelectorAll('input[name="months"]');
-for (let i = 0; i < month.length; i++) {
-    month[i].addEventListener('change', handleCheckbox);
-}
-
-const countyList = document.getElementById('county-list');
-let checkboxes = countyList.querySelectorAll('input[type="checkbox"]');
-
-checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', handleCountyCheckbox);
-});
-
-function handleCountyCheckbox() {
-    selectedCounty = Array.from(checkboxes)
-        .filter((checkbox) => checkbox.checked)
-        .map((checkbox) => checkbox.value);
-
-    console.log('Selected county:', selectedCounty);
-
-}
-
-let check;
-let data;
-const totalStudies = 2743;
-let apiUrl;
-let selectedInputsCounter = 0;
-
-let selectedEducation;
-let selectedTime;
-let selectedCounty;
-
-
-//'No studies', 'Primary school', 'Secondary school', 'High-school', 'Post-secondary education', 'Professional education', 'University education'
-function fetchData() {
-    // Get the values of all selected checkboxes
-    // Create XHR Object
-    selectedEducation = Array.from(column)
-        .filter((checkbox) => checkbox.checked)
-        .map((checkbox) => checkbox.value);
-
-    selectedTime = Array.from(month)
-        .filter((time) => time.checked)
-        .map((time) => time.value);
-
-    if (selectedInputsCounter < 3) {
-        return; // Wait until all three inputs are selected and county is defined
-    }
-    apiUrl = `http://localhost:3000/api/education?month=${selectedTime}&county=${selectedCounty}&column=${selectedEducation}`;
-
-    let xhr = new XMLHttpRequest();
-    // Open - type, url/file, async
-    xhr.open('GET', apiUrl, true);
-
-    console.log('READYSTATE', xhr.readyState);
-
-    xhr.onload = function () {
-        if (this.status === 200) {
-            data = JSON.parse(this.responseText);
-            console.log(data);
-            // Update the chart with the selectedEducation value
-            updateChart(data);
-        } else if (this.status === 404) {
-            document.getElementById('text').innerHTML = 'Not Found';
-        }
-    };
-
-    xhr.onerror = function () {
-        console.log('Request error...');
-    };
-    // Send request
-    xhr.send()
-}
-
-function handleCheckbox() {
-    let checkboxValue = event.target.value;
-    let isChecked = event.target;
-
-    if (isChecked.checked) {
-        check = 1;
-        console.log(`Button ${checkboxValue} checked`);
-        selectedInputsCounter++;
-    } else {
-        check = 0;
-        console.log(`Button ${checkboxValue} unchecked`);
-        selectedInputsCounter--;
-    }
-    fetchData();
-}
-
-const initialData = {
-    labels: ['Total'],
-    datasets: [
-        {
-            label: 'Education',
-            data: [totalStudies],
-            backgroundColor: ['blue']
-        }
-    ]
-};
-
-function updateChart(data) {
-    const datasetBackgroundColor = getRandomColor();
-    // Create the updated chart data object
-    // Update the chart with the new data
-    chart.data = {
-        labels: ['Total', 'Education'],
-        datasets: [
-            {
-                label: 'Education',
-                data: [totalStudies, data.value],
-                backgroundColor: ['blue', datasetBackgroundColor]
-            }
-        ]
-    };
-    chart.update();
-}
-
-const chart = new Chart(ctx, {
-    type: 'pie',
-    data: initialData,
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'top'
-            },
-            title: {
-                display: true,
-                text: 'Education Pie Chart'
-            }
-        }
-    }
-});
-
-function setInitialData() {
-    chart.data = initialData;
-    chart.update();
-}
-
-function init() {
-    fetchData();
-}
-
-// Initialize the chart with initial data
-init();
-*/

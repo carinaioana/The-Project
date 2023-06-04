@@ -1,13 +1,3 @@
-// const {
-//   findAll,
-//   findById,
-//   create,
-//   update,
-//   remove,
-//   findByMonth,
-//   findByMonthAndId,
-// } = require("../models/environmentModel");
-
 const Data = require("../models/environmentModel.js");
 const getAllEnvironment = async (req, res) => {
   try {
@@ -22,6 +12,22 @@ const getAllEnvironment = async (req, res) => {
   }
 };
 
+async function getByMonthAndColumn(req, res, month, county, column) {
+  try {
+    const data = await Data.findByMonthAndColumn(month, county, column);
+
+    if (!data) {
+      res.writeHead(404, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ message: "Data Not Found" }));
+    } else {
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify(data));
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 /*const getOneEnvironment = async (req, res) => {
   try {
     const result = findById();
@@ -34,20 +40,7 @@ const getAllEnvironment = async (req, res) => {
   }
 };
 
-async function getByMonthAndId(req, res, month, county, column) {
-  try {
-    const data = await Data.findByMonthAndId(month, county, column);
 
-    if (!data) {
-      res.writeHead(404, { "Content-Type": "application/json" });
-      res.end(JSON.stringify({ message: "Data Not Found" }));
-    } else {
-      res.writeHead(200, { "Content-Type": "application/json" });
-      res.end(JSON.stringify(data));
-    }
-  } catch (error) {
-    console.log(error);
-  }
 }*/
 
-module.exports = { getAllEnvironment };
+module.exports = { getAllEnvironment, getByMonthAndColumn };

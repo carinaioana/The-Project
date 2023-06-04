@@ -37,15 +37,15 @@
             <ul class="checkbox-dropdown-list">
                 <li>
                     <label>
-                        <input id="3" name="months" type="checkbox" value="3-months"/>Last 3 months</label>
+                        <input id="3" name="months" type="checkbox" value="3"/>Last 3 months</label>
                 </li>
                 <li>
                     <label>
-                        <input id="6" name="months" type="checkbox" value="6-months"/>Last 6 months</label>
+                        <input id="6" name="months" type="checkbox" value="6"/>Last 6 months</label>
                 </li>
                 <li>
                     <label>
-                        <input id="9" name="months" type="checkbox" value="12-months"/>Last 12 months</label>
+                        <input id="9" name="months" type="checkbox" value="12"/>Last 12 months</label>
                 </li>
 
             </ul>
@@ -57,24 +57,24 @@
             <ul class="checkbox-dropdown-list" id="county-list">
             </ul>
         </div>
+        <label>You can choose maximum 3 counties</label>
     </div>
     <div class="chart-container">
         <canvas id="ageChart"></canvas>
     </div>
+    <div>
+        <button class="content-filter-button" id="pdf">PDF</button>
+    </div>
 
-
-    <!--     <div class="filtering-element">Export<div>
-             <button id="csv" class="navbar-selector-button">CSV</button>
-             <button id="svg" class="navbar-selector-button">SVG</button>
-             <button id="pdf" class="navbar-selector-button">PDF</button>
-         </div>
-         </div>
--->
 </div>
 <footer class="footer">
     <p>&copy; 2023 The project</p>
 </footer>
 
 </body>
+<script crossorigin="anonymous"
+        integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+        referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
 
 </html>

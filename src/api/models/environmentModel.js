@@ -6,7 +6,8 @@ async function findAll() {
     const client = await pool.connect();
     const result = await client.query("SELECT * FROM environment");
     client.release();
-    return result.rows[0];
+    console.log(result.rows);
+    return result.rows;
   } catch (error) {
     throw error;
   }
@@ -167,15 +168,14 @@ function findByMonth(month) {
   });
 }
 
-function findByMonthAndId(month, county, column) {
+function findByMonthAndColumn(month, column) {
   return new Promise(async (resolve, reject) => {
     try {
       const client = await pool.connect();
-      const query = `SELECT ${column}
+      const query = `SELECT county, ${column}
                            FROM environment
-                           WHERE month = $1
-                             AND county = $2;`;
-      const values = [month, county];
+                           WHERE month = $1`;
+      const values = [month];
 
       console.log(values);
 
@@ -201,5 +201,5 @@ module.exports = {
   update,
   remove,
   findByMonth,
-  findByMonthAndId,
+  findByMonthAndColumn,
 };
