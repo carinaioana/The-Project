@@ -33,4 +33,5 @@ Instructiuni despre cum putem instala aceasta aplicatie
 - Deschidem din browser si scriem http://localhost:3000/
 
 ## Taskuri
-- Carina: Paginile, backendul, autentificarea, functionalitate pieChart + barChart, exporturi,map + ageChart, css, documentatie
+- Carina: Paginile, backendul, autentificarea, functionalitate pieChart + barChart + map + ageChart, exporturi, documentatie
+- Ioana: css
