@@ -162,11 +162,29 @@ async function deleteCounty(req, res, id) {
     }
 }
 
+
+async function getByMonthAndFilter(req, res, month, filter) {
+    try {
+        const data = await Data.findByMonthAndFilter(month, filter);
+
+        if (!data) {
+            res.writeHead(404, {"Content-Type": "application/json"});
+            res.end(JSON.stringify({message: "Data Not Found"}));
+        } else {
+            res.writeHead(200, {"Content-Type": "application/json"});
+            res.end(JSON.stringify(data));
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
     getAllCounties,
     getOneCounty,
     createCounty,
     updateCounty,
     deleteCounty,
-    getOneMonth
+    getOneMonth,
+    getByMonthAndFilter
 }

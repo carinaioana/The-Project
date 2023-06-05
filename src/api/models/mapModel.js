@@ -162,11 +162,36 @@ function remove(id) {
     });
 }
 
+function findByMonthAndFilter(month, filter) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const client = await pool.connect();
+            const result = await client.query(
+                `SELECT county, ${filter}
+                 FROM map
+                 WHERE month = $1`,
+                [month]
+            );
+            client.release();
+
+            if (result.rows.length === 0) {
+                resolve(null);
+            } else {
+                resolve(result.rows);
+            }
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+
 module.exports = {
     findAll,
     findById,
     create,
     update,
     remove,
-    findByMonth
+    findByMonth,
+    findByMonthAndFilter
 };

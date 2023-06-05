@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let apiUrl;
     let selectedInputsCounter = 0;
     let check;
-    let totalStudies = 5000;
+    let avgStudies = 5000;
     const token = localStorage.getItem("token");
     const CHART_COLORS = {
         red: "rgb(255, 99, 132)",
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         labels: ["Total"],
         datasets: [
             {
-                data: [totalStudies],
+                data: [avgStudies],
                 backgroundColor: ["blue"],
             },
         ],
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
         data: initialData,
         options: {
             responsive: true,
-            aspectRatio: 2.75,
+            aspectRatio: 2,
             plugins: {
                 legend: {
                     position: "top",

@@ -11,6 +11,7 @@ const mimeTable = {
     ".json": "application/json",
     ".txt": "text/plain",
     ".gif": "image/gif",
+    ".svg": "image/svg+xml"
 };
 const sendFile = (req, res, filePath) => {
     const fileExt = path.extname(filePath);

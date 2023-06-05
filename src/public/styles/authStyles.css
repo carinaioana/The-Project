@@ -134,3 +134,101 @@ a.signup-btn:hover {
 
 
 }
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 600px;
+        padding: 10px;
+    }
+
+    .navbar {
+        padding: 5px;
+    }
+
+    .navbar h1 {
+        font-size: 20px;
+    }
+
+    .content {
+        margin-top: 30px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    form {
+        width: 250px;
+    }
+
+    input[type="submit"] {
+        padding: 8px 16px;
+    }
+
+    .admin-container {
+        padding: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .user-item {
+        padding: 0.2rem 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .admin-container button {
+        right: 0.2rem;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 400px;
+        padding: 10px;
+    }
+
+    .navbar {
+        padding: 5px;
+    }
+
+    .navbar h1 {
+        font-size: 18px;
+    }
+
+    .content {
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    form {
+        width: 200px;
+    }
+
+    input[type="submit"] {
+        padding: 6px 12px;
+    }
+
+    .admin-container {
+        padding: 1rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .user-item {
+        padding: 0.2rem 0;
+        margin-bottom: 0.3rem;
+    }
+
+    .admin-container button {
+        right: 0.2rem;
+        margin-left: 0.5rem;
+    }
+}

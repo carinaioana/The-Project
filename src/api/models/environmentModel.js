@@ -1,39 +1,40 @@
-const { pool } = require("../utils");
-const { v4: uuidv4 } = require("uuid");
+const {pool} = require("../utils");
+const {v4: uuidv4} = require("uuid");
 
 async function findAll() {
-  try {
-    const client = await pool.connect();
-    const result = await client.query("SELECT * FROM environment");
-    client.release();
-    console.log(result.rows);
-    return result.rows;
-  } catch (error) {
-    throw error;
-  }
+    try {
+        const client = await pool.connect();
+        const result = await client.query("SELECT * FROM environment");
+        client.release();
+        console.log(result.rows);
+        return result.rows;
+    } catch (error) {
+        throw error;
+    }
 }
 
 function findById(id) {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const client = await pool.connect();
-      const result = await client.query(
-        "SELECT * FROM environment WHERE county = $1",
-        [id]
-      );
-      client.release();
+    return new Promise(async (resolve, reject) => {
+        try {
+            const client = await pool.connect();
+            const result = await client.query(
+                "SELECT * FROM environment WHERE county = $1",
+                [id]
+            );
+            client.release();
 
-      if (result.rows.length === 0) {
-        resolve(null);
-      } else {
-        resolve(result.rows[0]);
-      }
-    } catch (error) {
-      reject(error);
-    }
-  });
+            if (result.rows.length === 0) {
+                resolve(null);
+            } else {
+                resolve(result.rows[0]);
+            }
+        } catch (error) {
+            reject(error);
+        }
+    });
 }
 
+/*
 function create(data) {
   return new Promise(async (resolve, reject) => {
     const {
@@ -82,6 +83,7 @@ function create(data) {
     }
   });
 }
+
 
 function update(id, data) {
   return new Promise(async (resolve, reject) => {
@@ -133,73 +135,70 @@ function update(id, data) {
     }
   });
 }
+*/
 
 function remove(id) {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const client = await pool.connect();
-      await client.query("DELETE FROM environment WHERE county=$1", [id]);
-      client.release();
-      resolve();
-    } catch (error) {
-      reject(error);
-    }
-  });
+    return new Promise(async (resolve, reject) => {
+        try {
+            const client = await pool.connect();
+            await client.query("DELETE FROM environment WHERE county=$1", [id]);
+            client.release();
+            resolve();
+        } catch (error) {
+            reject(error);
+        }
+    });
 }
 
 function findByMonth(month) {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const client = await pool.connect();
-      const result = await client.query(
-        "SELECT * FROM environment WHERE month = $1",
-        [month]
-      );
-      client.release();
+    return new Promise(async (resolve, reject) => {
+        try {
+            const client = await pool.connect();
+            const result = await client.query(
+                "SELECT * FROM environment WHERE month = $1",
+                [month]
+            );
+            client.release();
 
-      if (result.rows.length === 0) {
-        resolve(null);
-      } else {
-        resolve(result.rows);
-      }
-    } catch (error) {
-      reject(error);
-    }
-  });
+            if (result.rows.length === 0) {
+                resolve(null);
+            } else {
+                resolve(result.rows);
+            }
+        } catch (error) {
+            reject(error);
+        }
+    });
 }
 
 function findByMonthAndColumn(month, column) {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const client = await pool.connect();
-      const query = `SELECT county, ${column}
+    return new Promise(async (resolve, reject) => {
+        try {
+            const client = await pool.connect();
+            const query = `SELECT county, ${column}
                            FROM environment
                            WHERE month = $1`;
-      const values = [month];
+            const values = [month];
 
-      console.log(values);
+            console.log(values);
 
-      const result = await client.query(query, values);
+            const result = await client.query(query, values);
 
-      client.release();
+            client.release();
 
-      if (result.rows.length === 0) {
-        resolve(null);
-      } else {
-        resolve(result.rows);
-      }
-    } catch (error) {
-      reject(error);
-    }
-  });
+            if (result.rows.length === 0) {
+                resolve(null);
+            } else {
+                resolve(result.rows);
+            }
+        } catch (error) {
+            reject(error);
+        }
+    });
 }
 
 module.exports = {
-  findAll,
-  findById,
-  create,
-  update,
-  remove,
-  findByMonth,
-  findByMonthAndColumn,
+    findAll,
+    remove,
+    findByMonthAndColumn,
 };

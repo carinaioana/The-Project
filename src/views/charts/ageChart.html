@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
     <title>Unemployment Stats</title>
     <link href="../../public/styles/styles.css" rel="stylesheet">
     <link href="../../public/styles/contentStyles.css" rel="stylesheet">
@@ -27,6 +29,8 @@
 
         <a class="navbar-selector-button" href="/login" id="login-link">Login</a>
         <a class="navbar-selector-button" href="/about-us">About us</a>
+        <button id="darkModeToggle">Dark Mode</button>
+
     </div>
 </div>
 <div class="content">
@@ -57,7 +61,7 @@
             <ul class="checkbox-dropdown-list" id="county-list">
             </ul>
         </div>
-        <label>You can choose maximum 3 counties</label>
+        <label>Select maximum 3 counties</label>
     </div>
     <div class="chart-container">
         <canvas id="ageChart"></canvas>

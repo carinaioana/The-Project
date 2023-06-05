@@ -2,9 +2,16 @@
 <html lang="en">
 
 <head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
     <title>Unemployment Stats</title>
     <link href="../../public/styles/styles.css" rel="stylesheet">
     <link href="../../public/styles/contentStyles.css" rel="stylesheet">
+    <script src="../../public/scripts/app.js" type="module"></script>
+    <script src='../../public/scripts/charts.js'></script>
+    <script src="../../public/scripts/mapChart.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
 </head>
 
 <body>
@@ -23,9 +30,17 @@
 
         <a class="navbar-selector-button" href="/login" id="login-link">Login</a>
         <a class="navbar-selector-button" href="/about-us">About us</a>
+        <button id="darkModeToggle">Dark Mode</button>
+
     </div>
 </div>
 <div class="content">
+    <div class="modal" id="errorModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
     <div class="content-filter">
         <!--create 6 buttons for selecting the filter-->
         <div class="checkbox-dropdown">
@@ -33,15 +48,15 @@
             <ul class="checkbox-dropdown-list">
                 <li>
                     <label>
-                        <input name="months" type="checkbox" value="3-months"/>Last 3 months</label>
+                        <input name="months" type="checkbox" value="3"/>Last 3 months</label>
                 </li>
                 <li>
                     <label>
-                        <input name="months" type="checkbox" value="6-months"/>Last 6 months</label>
+                        <input name="months" type="checkbox" value="6"/>Last 6 months</label>
                 </li>
                 <li>
                     <label>
-                        <input name="months" type="checkbox" value="12-months"/>Last 12 months</label>
+                        <input name="months" type="checkbox" value="12"/>Last 12 months</label>
                 </li>
             </ul>
         </div>
@@ -49,40 +64,43 @@
             <label class="filtering-element-label">More filters:</label>
             <div class="filtering-element-options">
                 <label class="filtering-element-option">
-                    <input name="gender" type="checkbox" value="total">
-                    Total nr of Unemployed
+                    <input name="gender" type="checkbox" value="total_unemployed">
+                    Total unemployed
                 </label>
                 <label class="filtering-element-option">
-                    <input name="gender" type="checkbox" value="male">
+                    <input name="gender" type="checkbox" value="male_unemployed">
                     Unemployed Male
                 </label>
                 <label class="filtering-element-option">
-                    <input name="gender" type="checkbox" value="female">
+                    <input name="gender" type="checkbox" value="female_unemployed">
                     Unemployed Female
                 </label>
                 <label class="filtering-element-option">
-                    <input name="gender" type="checkbox" value="paid">
+                    <input name="gender" type="checkbox" value="paid_unemployed">
                     Paid
                 </label>
                 <label class="filtering-element-option">
-                    <input name="gender" type="checkbox" value="notPaid">
+                    <input name="gender" type="checkbox" value="not_paid_unemployed">
                     Not Paid
                 </label>
+
             </div>
+            <label>Select only one filter</label>
         </div>
 
     </div>
-    <canvas id="mapChart"></canvas>
-    <!-- <div>
-         <button class="content-filter-button" id="svg">SVG</button>
-     </div>-->
+    <div class="map-container">
+        <object data="../../public/assets/ro.svg" id="map" type="image/svg+xml"></object>
+    </div>
+    <div>
+        <button class="content-filter-button" id="svg">SVG</button>
+    </div>
 
 </div>
 <footer class="footer">
     <p>&copy; 2023 The project</p>
 </footer>
-<script src="../../public/scripts/app.js" type="module"></script>
-<script src='../../public/scripts/charts.js'></script>
+
 
 </body>
 
