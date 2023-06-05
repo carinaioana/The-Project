@@ -242,7 +242,6 @@ p {
         margin: 1rem;
     }
 
-    /* ... other styles you want to modify for smaller screens ... */
 }
 
 @media (max-width: 480px) {
@@ -255,5 +254,4 @@ p {
         font-size: 14px;
     }
 
-    /* ... other styles you want to modify for smaller screens ... */
 }

@@ -231,11 +231,11 @@
         width: 100%;
     }
 
-    .map-container {
-        max-width: none;
+    .svg-container {
+        width: 100%;
+        padding-bottom: 75%; /* Adjust this value to control the aspect ratio of the SVG */
+        position: relative;
     }
-
-    /* ... other styles you want to modify for smaller screens ... */
 }
 
 @media (max-width: 480px) {
@@ -250,6 +250,10 @@
         text-overflow: ellipsis;
     }
 
-    /* ... other styles you want to modify for smaller screens ... */
+    .map-container {
+        height: 40vh;
+    }
+
+
 }
 
