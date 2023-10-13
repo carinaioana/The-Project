@@ -1,9 +1,4 @@
-Nume echipa: The Project
-
-Componenta echipa:
-
-- Student 1: Sirbu Carina Ioana
-- Student 2: Astefanoae Ioana
+Nume proiect: Unemployment Explorer (UnX)
 
 ## Structura fisiere
 
@@ -32,6 +27,3 @@ Instructiuni despre cum putem instala aceasta aplicatie
 - Dam run la server
 - Deschidem din browser si scriem http://localhost:3000/
 
-## Taskuri
-- Carina: Paginile, backendul, autentificarea, functionalitate pieChart + barChart + map + ageChart, exporturi, documentatie
-- Ioana: css
